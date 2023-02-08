@@ -1,13 +1,8 @@
-import React,{ FC, useState } from 'react'
-
+import { FC } from 'react'
+import useRouteElements from './routes/useRouteElements'
 const App: FC = () => {
-  const [fullname, setFullname] = useState('hello')
-  console.log(fullname)
-  return (
-    <div>
-      <h1 className='text-gray-200'>{fullname}</h1>
-    </div>
-  )
+  const routes = useRouteElements()
+  return <div>{routes}</div>
 }
 
 export default App
