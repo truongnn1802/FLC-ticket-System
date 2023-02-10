@@ -1,11 +1,8 @@
 import { FC } from 'react'
+import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 
 const ProgressCheck: FC = () => {
-  return (
-    <div>
-      <h1 className='text-gray-200'>Kiểm tra tiến độ</h1>
-    </div>
-  )
+  return <DefaultLayout>ProgressCheck</DefaultLayout>
 }
 
 export default ProgressCheck

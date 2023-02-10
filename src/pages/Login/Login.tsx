@@ -1,11 +1,8 @@
 import { FC } from 'react'
+import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 
 const Login: FC = () => {
-  return (
-    <div>
-      <h1 className='text-gray-200'>Login</h1>
-    </div>
-  )
+  return <DefaultLayout>Login</DefaultLayout>
 }
 
 export default Login

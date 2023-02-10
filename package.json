@@ -6,6 +6,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1"
@@ -31,6 +32,7 @@
     "@typescript-eslint/parser": "^5.51.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
+    "classnames": "^2.3.2",
     "clean-webpack-plugin": "^4.0.0",
     "compression-webpack-plugin": "^10.0.0",
     "copy-webpack-plugin": "^11.0.0",

@@ -23,8 +23,10 @@ module.exports = (env, argv) => {
     resolve: {
       // Giải quyết các file theo thứ tự ưu tiên từ trái sang phải nếu import
       // các file cùng một tên nhưng các đuôi mở rộng
-      extensions: ['.tsx', '.ts', '.jsx', '.js']
-      
+      extensions: ['.tsx', '.ts', '.jsx', '.js'],
+      alias: {
+        src: path.resolve(__dirname, 'src'),
+      },
     },
     // File đầu vào cho webpack, file này thường là file import mọi file khác
     entry: ['./src/index.tsx'],

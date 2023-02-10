@@ -1,11 +1,7 @@
 import { FC } from 'react'
-
+import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 const NewRequest: FC = () => {
-  return (
-    <div>
-      <h1 className='text-gray-200'>Tạo yêu cầu mới</h1>
-    </div>
-  )
+  return <DefaultLayout>NewRequest</DefaultLayout>
 }
 
 export default NewRequest
