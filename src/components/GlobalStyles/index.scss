@@ -31,8 +31,17 @@ body {
   background-color: #fff;
 }
 
-h2 {
+h1,h2,h3,h4,h5,h6{
+  margin:20px 0 10px;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
 }
 
 .container {
@@ -61,4 +70,12 @@ h2 {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+p,em{
+  font-size: 14px;
+}
+
+.mb-15{
+  margin-bottom: 1.5rem;
 }
