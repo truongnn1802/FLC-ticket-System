@@ -7,7 +7,7 @@ export const Header: FC = () => {
     <div className={styles.header}>
       <nav className={styles.navMenu}>
         <div className={styles.container}>
-          <div className={styles.pathLeft}>Welcome</div>
+          <div className={styles.pathLeft}>Welcome khách</div>
           <div className='partRight'>
             <Link to='/' className={styles.navItem}>
               Trang chủ

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
 type Props = {
@@ -11,6 +11,10 @@ type Props = {
   style?: object
   styleLabel?: object
   styleInput?: object
+  name?: string
+  placeHolder?: string
+  validator?: () => string
+  error?:boolean
 }
 
 const Input = ({
@@ -22,31 +26,52 @@ const Input = ({
   style,
   styleLabel,
   styleInput,
-  note
+  note,
+  name,
+  placeHolder,
+  validator,
+  error
 }: Props): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null)
-  const [value,setValue] = useState<string>('')
-  useEffect(()=>{
-    console.log(value);
-  },[value])
+  const [value, setValue] = useState<string>('')
+  
+
+  
 
   return (
-    <div className={styles.wrapperInput} style={{ width: width, ...style }}>
-      {label && (
-        <label style={{ width: widthLabel, flexBasis: widthLabel, ...styleLabel }}>
-          {label}
-          <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
-        </label>
-      )}
-      <input type={type} style={{ ...styleInput }} ref={inputRef} value={value} onChange={(event)=>setValue(event.target.value)}/>
-      {note && (
-        <em className={styles.note}>
-          {note}
-          <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
-        </em>
-      )}
-    </div>
+    <>
+      <div className={styles.wrapperInput} style={{ width: width, ...style }}>
+        {label && (
+          <label style={{ width: widthLabel, flexBasis: widthLabel, ...styleLabel }}>
+            {label}
+            <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
+          </label>
+        )}
+        <input
+          type={type}
+          placeholder={placeHolder}
+          style={{ ...styleInput }}
+          className='itemForm'
+          ref={inputRef}
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+          name={name}
+          required={require}
+        />
+        {note && (
+          <em className={styles.note}>
+            {note}
+            <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
+          </em>
+        )}
+        {require && error && (
+          <span className={styles.error} style={{ marginLeft: `calc(${widthLabel} + 15px)` }}>
+            Yêu cầu điền thông tin vào mục {label}
+          </span>
+        )}
+      </div>
+    </>
   )
 }
 
-export default Input
+export default memo(Input)

@@ -7,10 +7,8 @@ import Select from 'src/components/Select'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 const NewRequest: FC = () => {
-  // const handleSubmit = ()=>{
-  //   console.log(event:React.FormEvent<HTMLFormElement>);
-    
-  // }
+  const handleSubmit = () => {
+  }
   return (
     <DefaultLayout>
       <section className='container'>
@@ -19,12 +17,12 @@ const NewRequest: FC = () => {
         <h3>Thông tin liên lạc</h3>
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.infomation}>
-          <Form action='' >
+          <Form action='' onSubmit={handleSubmit}>
             <Input label='Địa chỉ email' type='text' require />
             <div className='mb-15' />
-            <Input label='Họ tên' type='text' require />
+            <Input label='Họ tên' type='text' require name='hoten' />
             <div className='mb-15' />
-            <Input label='Số điện thoại' type='text' require widthLabel='195px' width='406px' />
+            <Input label='Số điện thoại' type='text' require widthLabel='195px' width='406px' name='sdt' />
             <Input
               label='Số máy lẻ'
               type='text'
@@ -33,13 +31,25 @@ const NewRequest: FC = () => {
               styleLabel={{ padding: 0 }}
               styleInput={{ margin: 0, fontWeight: 400 }}
             />
-            <hr style={{margin:'10px 0 20px'}}/>
-            <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---'/>
+            <hr style={{ margin: '10px 0 20px' }} />
+            <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' />
             <div className='mb-15' />
-            <Capcha  label='Capcha' widthLabel='195px' width='295px'/>
-            <Input note='Vui lòng điền dãy số - đăng nhập tài khoản để tắt chức năng này.' type='text' width='500px'  styleInput={{ margin: 0, width: '80px',height:'30px' }} require />
-            <hr style={{margin:'25px 0 20px'}}/>
-            <Button/>
+            <Capcha label='Capcha' widthLabel='195px' width='295px' />
+            <Input
+              note='Vui lòng điền dãy số - đăng nhập tài khoản để tắt chức năng này.'
+              type='text'
+              width='500px'
+              styleInput={{ margin: 0, width: '80px', height: '30px' }}
+              require
+            />
+            <hr style={{ margin: '25px 0 20px' }} />
+            <div style={{ textAlign: 'center' }}>
+              <Button text='Gửi đi' bgColor='#5cb85c' borderColor='#4cae4c' />
+              <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' />
+              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />
+            </div>
+            <br />
+            <br />
           </Form>
         </div>
       </section>

@@ -35,7 +35,7 @@ const Select = ({
         {label}
         <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
       </label>
-      <select>
+      <select name="dfas" className='itemForm'>
         <option selected>{setSlected}</option>
         <option value='1'>One</option>
         <option value='2'>Two</option>

@@ -22,7 +22,6 @@ const Capcha = ({
 }: Props): JSX.Element => {
 
   const [state] = useState<string[]>([Math.floor(Math.random()*9999)+"",Math.floor(Math.random()*16777215).toString(16)])
-  console.log(Math.floor(Math.random()*16777215).toString(16));
   
   return (
     <div className={styles.wrapperInput} style={{ width: width, ...style }}>
