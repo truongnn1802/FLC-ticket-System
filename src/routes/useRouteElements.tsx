@@ -25,7 +25,7 @@ export default function useRouteElements() {
     {
       path: '/register',
       element: <Register/>
-    }
+    },
   ])
   return routes
 }

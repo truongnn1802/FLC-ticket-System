@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { collection, getDocs } from 'firebase/firestore/lite'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faEnvelope, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
 import Button from 'src/components/Button'
@@ -10,27 +11,14 @@ import Select from 'src/components/Select'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 import InputIcon from 'src/components/InputIcon'
-import {Login as LoginService} from 'src/services/Login.api'
+import { Login as LoginService } from 'src/services/Login.api'
 
 const Login: FC = () => {
   const formRef = useRef<HTMLFormElement>(null)
-  const [account,setAccount] = useState<{username:string,password:string}>({
-    username:'',
-    password:''
+  const [account, setAccount] = useState<{ username: string; password: string }>({
+    username: '',
+    password: ''
   })
-  useEffect(()=>{
-    (()=>{
-     fetch('http://localhost:8000/account')
-     .then(res=>{
-      return res.json()
-     }).then(data=>{
-      const infoAccount =data.length >0&& data?.find((item:any)=> item.password==='admin'&&item.username==='admin')
-      if(infoAccount){
-        setAccount(infoAccount)
-      }
-     })
-    })()
-  },[])
 
   const handleSubmit = () => {
     const dataInput: any = {}
@@ -41,9 +29,17 @@ const Login: FC = () => {
         dataInput[input.name] = input.value
       }
     }
-    if(dataInput.username && dataInput.password){
+    const accountList = window.localStorage.getItem('listAccount')
+    const account =
+      accountList &&
+      JSON.parse(accountList).find(
+        (account: any) => account.hoten === dataInput.username && account.password === dataInput.password
+      )
+    if (account) {
       console.log(account);
       
+    } else {
+      alert('Tài khoản không đúng')
     }
   }
   return (
@@ -76,29 +72,58 @@ const Login: FC = () => {
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.loginForm}>
           <Form action='' ref={formRef}>
-            <InputIcon label={<FontAwesomeIcon icon={faEnvelope} />} placeHolder='Địa chỉ Email' type='text' name="username"/>
+            <InputIcon
+              label={<FontAwesomeIcon icon={faEnvelope} />}
+              placeHolder='Địa chỉ Email'
+              type='text'
+              name='username'
+            />
             <div className='mb-15' />
-            <InputIcon label={<FontAwesomeIcon icon={faTicketAlt} />} placeHolder='Ticket' type='text' name="password"/>
+            <InputIcon
+              label={<FontAwesomeIcon icon={faTicketAlt} />}
+              placeHolder='Ticket'
+              type='text'
+              name='password'
+            />
             <div style={{ textAlign: 'center', marginTop: '25px' }}>
-              <Button text='Đăng nhập' bgColor='#337ab7' borderColor='#2e6da4' width='100%' handleClick={handleSubmit}/>
+              <Button
+                text='Đăng nhập'
+                bgColor='#337ab7'
+                borderColor='#2e6da4'
+                width='100%'
+                handleClick={handleSubmit}
+              />
             </div>
           </Form>
           <div className={styles.partRight}>
-            <ul  >
+            <ul>
               <li>
                 <span>
-                  <FontAwesomeIcon icon={faCheck}/></span> Anh/chị chưa đăng ký?{' '}
-                <Link className={styles.link} to='/register'>Hãy tạo tài khoản mới!</Link>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>{' '}
+                Anh/chị chưa đăng ký?{' '}
+                <Link className={styles.link} to='/register'>
+                  Hãy tạo tài khoản mới!
+                </Link>
               </li>
               <li>
                 <span>
-                  <FontAwesomeIcon icon={faCheck}/></span> Đây là lần đầu anh/chị truy cập hệ thống? hoặc anh/chị
-                quên mã số phiếu đã tạo, hãy <Link className={styles.link} to='open.php'>mở phiếu yêu cầu (ticket) mới</Link>.
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>{' '}
+                Đây là lần đầu anh/chị truy cập hệ thống? hoặc anh/chị quên mã số phiếu đã tạo, hãy{' '}
+                <Link className={styles.link} to='open.php'>
+                  mở phiếu yêu cầu (ticket) mới
+                </Link>
+                .
               </li>
               <li>
                 <span>
-                  <FontAwesomeIcon icon={faCheck}/></span> <b>Tôi là một Hỗ trợ viên</b> -
-                <Link className={styles.link} to='/scp/'>Hãy đăng nhập tại đây!</Link>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>{' '}
+                <b>Tôi là một Hỗ trợ viên</b> -
+                <Link className={styles.link} to='/scp/'>
+                  Hãy đăng nhập tại đây!
+                </Link>
               </li>
             </ul>
           </div>
