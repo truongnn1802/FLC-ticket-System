@@ -40,7 +40,7 @@ const Register: FC = () => {
       listInput = formRef.current?.querySelectorAll('.itemForm')
 
       for (const input of listInput) {
-        
+
         console.log(input.required);
         
         if (typeof errClone === 'object') {
