@@ -14,7 +14,7 @@ type Props = {
   name?: string
   placeHolder?: string
   validator?: () => string
-  error?:boolean
+  error?: boolean
 }
 
 const Input = ({
@@ -34,9 +34,11 @@ const Input = ({
 }: Props): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [value, setValue] = useState<string>('')
-  
-
-  
+  useEffect(() => {
+    if (inputRef.current?.blur()) {
+      console.log('blur')
+    }
+  }, [])
 
   return (
     <>

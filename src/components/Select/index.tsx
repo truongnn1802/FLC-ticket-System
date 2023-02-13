@@ -9,6 +9,7 @@ type Props = {
   styleLabel?: object
   styleInput?: object
   setSlected?: string
+  name?: string
 }
 
 const Select = ({
@@ -18,7 +19,7 @@ const Select = ({
   width = '100%',
   style,
   styleLabel,
-  setSlected
+  setSlected,name
 }: Props): JSX.Element => {
   const inlineStyle: object = {
     width,
@@ -35,7 +36,7 @@ const Select = ({
         {label}
         <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
       </label>
-      <select name="dfas" className='itemForm'>
+      <select name={name} className='itemForm'>
         <option selected>{setSlected}</option>
         <option value='1'>One</option>
         <option value='2'>Two</option>
