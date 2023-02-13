@@ -4,6 +4,7 @@ import NewRequest from '../pages/NewRequest'
 import ProgressCheck from '../pages/ProgressCheck'
 import HomePage from '../pages/HomePage'
 import Register from 'src/pages/Register'
+import InternalDocument from 'src/pages/InternalDocument/InternalDocument'
 export default function useRouteElements() {
   const routes = useRoutes([
     {
@@ -25,6 +26,10 @@ export default function useRouteElements() {
     {
       path: '/register',
       element: <Register/>
+    },
+    {
+      path: '/test',
+      element: <InternalDocument/>
     }
   ])
   return routes

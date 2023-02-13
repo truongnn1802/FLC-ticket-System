@@ -14,7 +14,7 @@ type typeErr = {
   hoten:boolean
   password:boolean
   repeatPassword:boolean
-  sdt:boolean
+  sdt: boolean
 }
 
 const Register: FC = () => {
