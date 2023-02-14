@@ -74,7 +74,7 @@ const Login: FC = () => {
               name='username'
             />
             <div className='mb-15' />
-            <InputIcon label={<FontAwesomeIcon icon={faLock} />} placeHolder='Mật khẩu' type='text' name='password' />
+            <InputIcon label={<FontAwesomeIcon icon={faLock} />} placeHolder='Mật khẩu' type='password' name='password' />
             <div style={{ textAlign: 'center', marginTop: '25px' }}>
               <Button
                 text='Đăng nhập'

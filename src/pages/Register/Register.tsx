@@ -1,4 +1,5 @@
 import { FC, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
 import Input from 'src/components/Input'
@@ -27,6 +28,7 @@ const Register: FC = () => {
     phoneExt: false
   })
   const formRef = useRef<HTMLFormElement>(null)
+  const navigate = useNavigate()
 
   const handleSubmit = () => {
     const dataInput: any = {}
@@ -50,12 +52,16 @@ const Register: FC = () => {
         const accList = window.localStorage.getItem('listAccount')
         if (accList) {
           if (!JSON.parse(accList).some((acc: any) => acc.hoten === dataInput.hoten)) {
+            delete dataInput.repeatPassword
             window.localStorage.setItem('listAccount', JSON.stringify([...JSON.parse(accList), dataInput]))
+            navigate('/login')
           } else {
             alert('Tên đăng nhập đã tồn tại')
           }
         } else {
+          delete dataInput.repeatPassword
           window.localStorage.setItem('listAccount', JSON.stringify([dataInput]))
+          navigate('/login')
         }
       }
       setErrors(errClone)
