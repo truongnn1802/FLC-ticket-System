@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { FC, useContext, useRef, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import Button from 'src/components/Button'
