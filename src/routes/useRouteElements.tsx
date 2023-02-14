@@ -5,6 +5,8 @@ import ProgressCheck from '../pages/ProgressCheck'
 import HomePage from '../pages/HomePage'
 import Register from 'src/pages/Register'
 import InternalDocument from 'src/pages/InternalDocument/InternalDocument'
+import Logout from 'src/pages/Logout'
+import Profile from 'src/pages/Profile'
 export default function useRouteElements() {
   const routes = useRoutes([
     {
@@ -25,11 +27,19 @@ export default function useRouteElements() {
     },
     {
       path: '/register',
-      element: <Register/>
+      element: <Register />
     },
     {
-      path: '/test',
-      element: <InternalDocument/>
+      path: '/document',
+      element: <InternalDocument />
+    },
+    {
+      path: '/logout',
+      element: <Logout />
+    },
+    {
+      path: '/profile',
+      element: <Profile />
     }
   ])
   return routes

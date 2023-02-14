@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import Select from 'src/components/Select'
 import DefaultLayout from 'src/layouts/BaseLayout'
 import DocumentItem from './DocumentItem'
 import styles from './index.module.scss'
@@ -16,7 +17,9 @@ const InternalDocument: FC = () => {
               <DocumentItem key={i}></DocumentItem>
             ))}
           </div>
-          <div style={{ flexBasis: '26%' }}>ádasd</div>
+          <div style={{ flexBasis: '26%' }}>
+            <Select setSlected={'---Duyệt tìm theo chủ để---'} />
+          </div>
         </div>
       </section>
     </DefaultLayout>

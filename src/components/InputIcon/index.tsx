@@ -10,9 +10,9 @@ type Props = {
   width?: string
   style?: object
   styleLabel?: object
-  styleInput?: object,
-  name?:string
-  placeHolder?:string
+  styleInput?: object
+  name?: string
+  placeHolder?: string
 }
 
 const InputIcon = ({
@@ -29,18 +29,22 @@ const InputIcon = ({
   placeHolder
 }: Props): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null)
-  const [value,setValue] = useState<string>('')
-  useEffect(()=>{
-  },[value])
+  const [value, setValue] = useState<string>('')
+  useEffect(() => {}, [value])
 
   return (
     <div className={styles.wrapperInputIcon} style={{ width: width, ...style }}>
-      {label && (
-        <label style={{ width: widthLabel, flexBasis: widthLabel, ...styleLabel }}>
-          {label}
-        </label>
-      )}
-      <input type={type} placeholder={placeHolder} style={{ ...styleInput }} className='itemForm' ref={inputRef} value={value} onChange={(event)=>setValue(event.target.value)} name={name}/>
+      {label && <label style={{ width: widthLabel, flexBasis: widthLabel, ...styleLabel }}>{label}</label>}
+      <input
+        type={type}
+        placeholder={placeHolder}
+        style={{ ...styleInput }}
+        className='itemForm'
+        ref={inputRef}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        name={name}
+      />
       {note && (
         <em className={styles.note}>
           {note}

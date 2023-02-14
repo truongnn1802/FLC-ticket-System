@@ -1,4 +1,6 @@
 import { FC } from 'react'
+import { faFolderOpen } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './index.module.scss'
 import file from 'src/assets/images/file.png'
 
@@ -6,9 +8,9 @@ const DocumentItem: FC = () => {
   return (
     <div className={styles.document_item}>
       <div style={{ padding: '0px 10px' }}>
-        <img src={file} style={{ width: '40px', height: '40px' }} alt='none' />
+        <FontAwesomeIcon icon={faFolderOpen} />
       </div>
-      <div>
+      <div style={{ marginLeft: '20px', flex: 1 }}>
         <h4>
           <a href='https://chat.zalo.me/' className={styles.document_guide}>
             Hướng dẫn sử dụng
