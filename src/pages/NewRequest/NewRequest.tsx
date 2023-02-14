@@ -68,10 +68,10 @@ const NewRequest: FC = () => {
             </div>
             <hr style={{ margin: '10px 0 20px' }} />
             <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' />
-            <div style={{marginBottom:"30px"}}></div>
+            <div style={{ marginBottom: '30px' }}></div>
             <hr />
-           
-            <div style={{ textAlign: 'center',marginTop:"30px" }}>
+
+            <div style={{ textAlign: 'center', marginTop: '30px' }}>
               <Button text='Gửi đi' bgColor='#5cb85c' borderColor='#4cae4c' />
               <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' />
               <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />

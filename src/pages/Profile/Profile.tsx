@@ -15,8 +15,8 @@ type typeErr = {
   sdt: boolean
   timeZone: boolean
   phoneExt: boolean
-  newpassword:boolean
-  renewPassword:boolean
+  newpassword: boolean
+  renewPassword: boolean
 }
 
 const Profile: FC = () => {
@@ -28,10 +28,10 @@ const Profile: FC = () => {
     hoten: false,
     timeZone: false,
     phoneExt: false,
-    newpassword:false,
-    renewPassword:false
+    newpassword: false,
+    renewPassword: false
   })
-  const [reset,setReset] = useState<boolean>(false)
+  const [reset, setReset] = useState<boolean>(false)
   const { user } = useContext(GlobalContext)
   const formRef = useRef<HTMLFormElement>(null)
   const account: any = window.localStorage.getItem('account')
@@ -41,7 +41,7 @@ const Profile: FC = () => {
       listInput = formRef.current?.querySelectorAll('.itemForm')
 
       for (const input of listInput) {
-        input.value = ""
+        input.value = ''
         if (Object.keys(JSON.parse(account)).find((key) => key === input?.name))
           input.value = JSON.parse(account)[input?.name]
       }
@@ -71,20 +71,20 @@ const Profile: FC = () => {
           alert('Mật khẩu không khớp')
           return
         }
-        const accList = window.localStorage.getItem('listAccount')  
+        const accList = window.localStorage.getItem('listAccount')
         if (accList) {
           const accListObj = JSON.parse(accList)
-          if (!accListObj.some((acc: any) => acc.hoten === dataInput.hoten )&& !user.hoten) {
+          if (!accListObj.some((acc: any) => acc.hoten === dataInput.hoten) && !user.hoten) {
             alert('Tên đăng nhập đã tồn tại')
-          } else if(accListObj.some((acc: any) => acc.hoten === dataInput.hoten )&& !user.hoten) {
+          } else if (accListObj.some((acc: any) => acc.hoten === dataInput.hoten) && !user.hoten) {
             window.localStorage.setItem('listAccount', JSON.stringify([...accListObj, dataInput]))
-          }else{
-          const index = accListObj.findIndex((acc: any) => acc.hoten === user.hoten)
-          delete dataInput.renewPassword
-          
-          accListObj[index]=dataInput
-          accListObj[index].password=dataInput.newpassword
-          delete accListObj[index].newpassword
+          } else {
+            const index = accListObj.findIndex((acc: any) => acc.hoten === user.hoten)
+            delete dataInput.renewPassword
+
+            accListObj[index] = dataInput
+            accListObj[index].password = dataInput.newpassword
+            delete accListObj[index].newpassword
 
             window.localStorage.setItem('listAccount', JSON.stringify(accListObj))
           }
@@ -139,7 +139,12 @@ const Profile: FC = () => {
             <div className='mb-15' />
             <Input label='Xác nhận mật khẩu mới' error={errors?.renewPassword} type='password' name='renewPassword' />
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
-              <Button text={user?.hoten ? 'Đăng ký' : 'Cập nhật'} bgColor='#5cb85c' borderColor='#4cae4c' handleClick={handleSubmit} />
+              <Button
+                text={user?.hoten ? 'Đăng ký' : 'Cập nhật'}
+                bgColor='#5cb85c'
+                borderColor='#4cae4c'
+                handleClick={handleSubmit}
+              />
               {user?.hoten && (
                 <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' handleClick={() => setReset(true)} />
               )}
