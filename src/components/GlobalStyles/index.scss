@@ -14,6 +14,17 @@
   --secondry-color: ##5cb85c;
   --primary-text-color: #fff;
   --width: 1170px;
+    display: block;
+    @media screen and (max-width: 639px ){
+      --width: 100%;
+    }
+  @media screen and (max-width: 415px ){
+    --width: 414px;
+}
+  @media screen and (max-width: 376px ){
+    --width: 375px;
+}
+
 }
 
 html {
