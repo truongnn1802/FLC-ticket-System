@@ -18,11 +18,13 @@ const Capcha = ({
   width = '100%',
   style,
   styleLabel,
-  styleCapcha,
+  styleCapcha
 }: Props): JSX.Element => {
+  const [state] = useState<string[]>([
+    Math.floor(Math.random() * 9999) + '',
+    Math.floor(Math.random() * 16777215).toString(16)
+  ])
 
-  const [state] = useState<string[]>([Math.floor(Math.random()*9999)+"",Math.floor(Math.random()*16777215).toString(16)])
-  
   return (
     <div className={styles.wrapperInput} style={{ width: width, ...style }}>
       {label && (
@@ -31,7 +33,7 @@ const Capcha = ({
           <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
         </label>
       )}
-      <div className={styles.capchaCode} style={{ ...styleCapcha,backgroundColor:`#`+state[1] }}>
+      <div className={styles.capchaCode} style={{ ...styleCapcha, backgroundColor: `#` + state[1] }}>
         {state[0]}
       </div>
     </div>

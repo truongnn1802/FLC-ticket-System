@@ -19,7 +19,8 @@ const Select = ({
   width = '100%',
   style,
   styleLabel,
-  setSlected,name
+  setSlected,
+  name
 }: Props): JSX.Element => {
   const inlineStyle: object = {
     width,

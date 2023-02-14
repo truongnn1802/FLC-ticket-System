@@ -5,10 +5,10 @@ type Props = {
   bgColor: string
   borderColor: string
   width?: string
-  handleClick?:(data?:any)=>void
+  handleClick?: (data?: any) => void
 }
 
-const Button = ({ text, bgColor, borderColor, width = 'auto' ,handleClick}: Props): JSX.Element => {
+const Button = ({ text, bgColor, borderColor, width = 'auto', handleClick }: Props): JSX.Element => {
   return (
     <button
       className={styles.button}

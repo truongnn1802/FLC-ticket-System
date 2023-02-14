@@ -10,8 +10,7 @@ import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 import InputIcon from 'src/components/InputIcon'
 const ProgressCheck: FC = () => {
-  const handleSubmit = () => {
-  }
+  const handleSubmit = () => {}
   return (
     <DefaultLayout>
       <section className='container'>
@@ -27,7 +26,7 @@ const ProgressCheck: FC = () => {
             <InputIcon label={<FontAwesomeIcon icon={faEnvelope} />} placeHolder='Địa chỉ Email' type='text' />
             <div className='mb-15' />
             <InputIcon label={<FontAwesomeIcon icon={faTicketAlt} />} placeHolder='Ticket' type='text' />
-            <div style={{ textAlign: 'center',marginTop:'25px' }}>
+            <div style={{ textAlign: 'center', marginTop: '25px' }}>
               <Button text='Xem phiếu' bgColor='#337ab7' borderColor='#2e6da4' width='100%' />
             </div>
           </Form>

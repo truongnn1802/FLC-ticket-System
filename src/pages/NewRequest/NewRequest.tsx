@@ -7,8 +7,7 @@ import Select from 'src/components/Select'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 const NewRequest: FC = () => {
-  const handleSubmit = () => {
-  }
+  const handleSubmit = () => {}
   return (
     <DefaultLayout>
       <section className='container'>
