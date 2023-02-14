@@ -15,6 +15,8 @@ type typeErr = {
   sdt: boolean
   timeZone: boolean
   phoneExt: boolean
+  newpassword: boolean
+  renewPassword: boolean
 }
 
 const Profile: FC = () => {
@@ -25,21 +27,26 @@ const Profile: FC = () => {
     sdt: false,
     hoten: false,
     timeZone: false,
-    phoneExt: false
+    phoneExt: false,
+    newpassword: false,
+    renewPassword: false
   })
+  const [reset, setReset] = useState<boolean>(false)
   const { user } = useContext(GlobalContext)
   const formRef = useRef<HTMLFormElement>(null)
-
+  const account: any = window.localStorage.getItem('account')
   useEffect(() => {
     let listInput: NodeListOf<HTMLInputElement>
     if (formRef.current?.querySelectorAll('.itemForm')) {
-      const account: any = window.localStorage.getItem('account')
       listInput = formRef.current?.querySelectorAll('.itemForm')
+
       for (const input of listInput) {
-        input.value = account[input.name]
+        input.value = ''
+        if (Object.keys(JSON.parse(account)).find((key) => key === input?.name))
+          input.value = JSON.parse(account)[input?.name]
       }
     }
-  }, [])
+  }, [reset])
 
   const handleSubmit = () => {
     const dataInput: any = {}
@@ -56,16 +63,30 @@ const Profile: FC = () => {
       }
 
       if (Object.values(errClone).every((err) => err == false)) {
-        if (dataInput.password !== dataInput.repeatPassword) {
+        if (dataInput.password !== JSON.parse(account).password) {
+          alert('Mật khẩu hiện tại không đúng')
+          return
+        }
+        if (dataInput.newpassword !== dataInput.renewPassword) {
           alert('Mật khẩu không khớp')
           return
         }
         const accList = window.localStorage.getItem('listAccount')
         if (accList) {
-          if (!JSON.parse(accList).some((acc: any) => acc.hoten === dataInput.hoten)) {
-            window.localStorage.setItem('listAccount', JSON.stringify([...JSON.parse(accList), dataInput]))
-          } else {
+          const accListObj = JSON.parse(accList)
+          if (!accListObj.some((acc: any) => acc.hoten === dataInput.hoten) && !user.hoten) {
             alert('Tên đăng nhập đã tồn tại')
+          } else if (accListObj.some((acc: any) => acc.hoten === dataInput.hoten) && !user.hoten) {
+            window.localStorage.setItem('listAccount', JSON.stringify([...accListObj, dataInput]))
+          } else {
+            const index = accListObj.findIndex((acc: any) => acc.hoten === user.hoten)
+            delete dataInput.renewPassword
+
+            accListObj[index] = dataInput
+            accListObj[index].password = dataInput.newpassword
+            delete accListObj[index].newpassword
+
+            window.localStorage.setItem('listAccount', JSON.stringify(accListObj))
           }
         } else {
           window.localStorage.setItem('listAccount', JSON.stringify([dataInput]))
@@ -112,13 +133,21 @@ const Profile: FC = () => {
             <div className='mb-15' />
             <h3 style={{ padding: '0 15px' }}>Mật khẩu xác thực vào hệ thống</h3>
             <hr style={{ margin: '25px 0 20px' }} />
-            <Input label='Mật khẩu hiện tại' error={errors?.password} type='password' name='currentPassword' />
+            <Input label='Mật khẩu hiện tại' error={errors?.password} type='password' name='password' />
             <div className='mb-15' />
-            <Input label='Mật khẩu mới' error={errors?.password} type='password' name='password' />
+            <Input label='Mật khẩu mới' error={errors?.newpassword} type='password' name='newpassword' />
             <div className='mb-15' />
-            <Input label='Xác nhận mật khẩu mới' error={errors?.repeatPassword} type='password' name='repeatPassword' />
+            <Input label='Xác nhận mật khẩu mới' error={errors?.renewPassword} type='password' name='renewPassword' />
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
-              <Button text='Đăng ký' bgColor='#5cb85c' borderColor='#4cae4c' handleClick={handleSubmit} />
+              <Button
+                text={user?.hoten ? 'Đăng ký' : 'Cập nhật'}
+                bgColor='#5cb85c'
+                borderColor='#4cae4c'
+                handleClick={handleSubmit}
+              />
+              {user?.hoten && (
+                <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' handleClick={() => setReset(true)} />
+              )}
               <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' handleClick={() => {}} />
             </div>
             <br />

@@ -44,7 +44,7 @@ export default function useRouteElements() {
     },
     {
       path: '/ticket',
-      element: <Note/>
+      element: <Note />
     }
   ])
   return routes

@@ -5,7 +5,6 @@ export interface User {
   phoneExt: string
   timeZone: string
   password: string
-  repeatPassword: string
 }
 
 export interface UserLogin extends User {
