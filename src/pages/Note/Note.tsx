@@ -1,10 +1,10 @@
-import DefaultLayout from 'src/layouts/BaseLayout'
-import { Select, Button, Table, Badge } from 'antd'
+import { SyncOutlined } from '@ant-design/icons'
+import { Badge, Select, Table } from 'antd'
 import { Col, Row } from 'antd/es/grid'
 import Search from 'antd/es/input/Search'
-import styles from './index.module.scss'
 import type { ColumnsType } from 'antd/es/table'
-import { SyncOutlined } from '@ant-design/icons'
+import DefaultLayout from 'src/layouts/BaseLayout'
+import styles from './index.module.scss'
 
 const Note = () => {
   const onSearch = (value: string) => console.log(value)

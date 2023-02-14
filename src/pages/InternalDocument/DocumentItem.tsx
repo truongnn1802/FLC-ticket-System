@@ -1,8 +1,7 @@
-import { FC } from 'react'
 import { faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FC } from 'react'
 import styles from './index.module.scss'
-import file from 'src/assets/images/file.png'
 
 const DocumentItem: FC = () => {
   return (

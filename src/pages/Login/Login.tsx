@@ -1,6 +1,6 @@
-import { FC, useContext, useRef, useState } from 'react'
-import { faCheck, faEnvelope, faTicketAlt, faUser, faLock } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FC, useContext, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'

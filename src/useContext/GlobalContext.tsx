@@ -15,11 +15,10 @@ export const GlobalContext = React.createContext<{
     phoneExt: '',
     timeZone: '',
     password: '',
-    repeatPassword: '',
     isLogin: false
   },
-  handleAddUser: () => {},
-  handleLogout: () => {}
+  handleAddUser: () => undefined,
+  handleLogout: () => undefined
 })
 
 export const GlobalProvider = ({ children }: Props) => {
@@ -30,7 +29,6 @@ export const GlobalProvider = ({ children }: Props) => {
     phoneExt: '',
     timeZone: '',
     password: '',
-    repeatPassword: '',
     isLogin: false
   })
   useEffect(() => {
@@ -67,7 +65,6 @@ export const GlobalProvider = ({ children }: Props) => {
       phoneExt: '',
       timeZone: '',
       password: '',
-      repeatPassword: '',
       isLogin: false
     })
   }

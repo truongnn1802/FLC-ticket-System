@@ -1,16 +1,12 @@
-import { FC } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faEnvelope, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FC } from 'react'
 import Button from 'src/components/Button'
-import Capcha from 'src/components/Capcha'
 import Form from 'src/components/Form'
-import Input from 'src/components/Input'
-import Select from 'src/components/Select'
+import InputIcon from 'src/components/InputIcon'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
-import InputIcon from 'src/components/InputIcon'
 const ProgressCheck: FC = () => {
-  const handleSubmit = () => {}
   return (
     <DefaultLayout>
       <section className='container'>
@@ -22,7 +18,7 @@ const ProgressCheck: FC = () => {
 
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.ProgressCheck}>
-          <Form action='' onSubmit={handleSubmit}>
+          <Form action=''>
             <InputIcon label={<FontAwesomeIcon icon={faEnvelope} />} placeHolder='Địa chỉ Email' type='text' />
             <div className='mb-15' />
             <InputIcon label={<FontAwesomeIcon icon={faTicketAlt} />} placeHolder='Ticket' type='text' />

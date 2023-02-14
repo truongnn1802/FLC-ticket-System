@@ -116,7 +116,7 @@ const Register: FC = () => {
             />
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
               <Button text='Đăng ký' bgColor='#5cb85c' borderColor='#4cae4c' handleClick={handleSubmit} />
-              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' handleClick={() => {}} />
+              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />
             </div>
             <br />
             <br />
