@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react'
 import DefaultLayout from 'src/layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
-import Logo from 'src/assets/images/support.jpg'
+import Logo from 'src/assets/images/bannner.png'
 import Icon1 from 'src/assets/images/new_ticket_icon.png'
 import Icon2 from 'src/assets/images/check.png'
 import Icon3 from 'src/assets/images/notification.png'
@@ -10,18 +10,16 @@ import BoxComponent from './components/BoxComponents'
 import { PropsBox } from 'src/types/utils.type'
 import { GlobalContext } from 'src/useContext/GlobalContext'
 
-
 const HomePage: FC = () => {
-
-  const {user} = useContext(GlobalContext)
+  const { user } = useContext(GlobalContext)
 
   const listBox: PropsBox[] = [
     {
       title: 'Tạo yêu cầu mới',
       content: (
         <p>
-          Với người dùng sử dụng email <b>@flc.vn</b>, các anh/chị đăng nhập bằng email và mật khẩu của mình để tạo phiếu
-          yêu cầu hỗ trợ. Đối với các email khác, vui lòng tạo, kích hoạt tài khoản lần đầu để bắt đầu sử dụng.
+          Với người dùng sử dụng email <b>@tst.vn</b>, các anh/chị đăng nhập bằng email và mật khẩu của mình để tạo
+          phiếu yêu cầu hỗ trợ. Đối với các email khác, vui lòng tạo, kích hoạt tài khoản lần đầu để bắt đầu sử dụng.
         </p>
       ),
       txtButton: 'Tạo yêu cầu mới',
@@ -33,8 +31,8 @@ const HomePage: FC = () => {
       title: 'Kiểm tra tiến độ',
       content: (
         <p>
-          Hệ thống lưu lại lịch sử các lần giao tiếp của anh/chị với các Ban, Phòng, Bộ phận chức năng, vui lòng chuẩn bị
-          sẵn email và số phiếu yêu cầu của anh/chị để kiểm tra tiến độ phối hợp xử lý sự việc.
+          Hệ thống lưu lại lịch sử các lần giao tiếp của anh/chị với các Ban, Phòng, Bộ phận chức năng, vui lòng chuẩn
+          bị sẵn email và số phiếu yêu cầu của anh/chị để kiểm tra tiến độ phối hợp xử lý sự việc.
         </p>
       ),
       txtButton: 'Kiểm tra tiến độ',
@@ -74,21 +72,13 @@ const HomePage: FC = () => {
       href: user?.hoten ? '/ticket' : '/login'
     }
   ]
-  
+
   return (
     <DefaultLayout>
       <div className={styles.body}>
         <section className={styles.support}>
-          <img src={Logo} alt='Dịch vụ Hỗ trợ Nội bộ' className={styles.background} />
-          <div className={styles.textCenter}>
-            <h2>Dịch vụ Hỗ trợ Nội bộ</h2>
-            <span>Kênh Ghi Nhận Yêu Cầu</span>
-            <p>
-              <br />
-            </p>
-          </div>
+          <div className={styles.banner} style={{ backgroundImage: `url(${Logo})` }}></div>
         </section>
-        {/*  */}
         <section>
           <div className='container'>
             <div className={styles.boxList}>
