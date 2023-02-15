@@ -1,4 +1,3 @@
-import { QueryClient } from '@tanstack/react-query'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
@@ -7,7 +6,6 @@ import GlobalStyles from './components/GlobalStyles'
 import './index.scss'
 import { GlobalProvider } from './useContext/GlobalContext'
 
-const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Router>

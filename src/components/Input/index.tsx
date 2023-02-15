@@ -13,7 +13,6 @@ type Props = {
   styleInput?: object
   name?: string
   placeHolder?: string
-  validator?: () => string
   error?: boolean
 }
 
@@ -29,7 +28,6 @@ const Input = ({
   note,
   name,
   placeHolder,
-  validator,
   error
 }: Props): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null)
