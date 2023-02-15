@@ -9,7 +9,8 @@ type Props = {
   styleLabel?: object
   styleInput?: object
   setSlected?: string
-  name?: string
+  name?: string,
+  onChange?:any
 }
 
 const Select = ({
@@ -20,7 +21,8 @@ const Select = ({
   style,
   styleLabel,
   setSlected,
-  name
+  name,
+  onChange
 }: Props): JSX.Element => {
   const inlineStyle: object = {
     width,
@@ -31,13 +33,16 @@ const Select = ({
     flexBasis: widthLabel,
     ...styleLabel
   }
+  const handleChangeValue = (value:string)=>{
+    onChange(value)
+  }
   return (
     <div className={styles.wrapperInput} style={inlineStyle}>
       <label style={inlineStyleLabel}>
         {label}
         <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
       </label>
-      <select name={name} className='itemForm'>
+      <select name={name} className='itemForm' onChange={e=>{handleChangeValue(e.target.value)}}>
         <option selected>{setSlected}</option>
         <option value='1'>One</option>
         <option value='2'>Two</option>

@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react'
+import { FC, useContext,useState,useEffect } from 'react'
 import Button from 'src/components/Button'
 import Capcha from 'src/components/Capcha'
 import Form from 'src/components/Form'
@@ -6,9 +6,27 @@ import Input from 'src/components/Input'
 import Select from 'src/components/Select'
 import { GlobalContext } from 'src/useContext/GlobalContext'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
+import FormSupportCNTT from './components/FormSupportCNTT'
 import styles from './index.module.scss'
-const NewRequest: FC = () => {
+
+
+const NewRequest = () => {
+  const [renderComponent,setRenderComponent] = useState<string>("0")
   const { user } = useContext(GlobalContext)
+
+  const Component =(id:string)=> {
+    switch(id){
+      case '1':
+      return <FormSupportCNTT/>
+      default:
+        return null
+    }
+  }
+
+  const handleChangeTopic = (value:string)=>{
+    setRenderComponent(value)
+  }
+
   return (
     <DefaultLayout>
       <section className='container' style={{ minHeight: 'calc(100vh - 245px)' }}>
@@ -66,10 +84,10 @@ const NewRequest: FC = () => {
               <p>{user?.hoten}</p>
             </div>
             <hr style={{ margin: '10px 0 20px' }} />
-            <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' />
+            <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' onChange={handleChangeTopic}/>
+            {Component(renderComponent)}
             <div style={{ marginBottom: '30px' }}></div>
             <hr />
-
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
               <Button text='Gửi đi' bgColor='#5cb85c' borderColor='#4cae4c' />
               <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' />

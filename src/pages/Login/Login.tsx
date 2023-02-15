@@ -23,6 +23,7 @@ const Login: FC = () => {
         dataInput[input.name] = input.value
       }
     }
+    
     const accountList = window.localStorage.getItem('listAccount')
     const account =
       accountList &&
