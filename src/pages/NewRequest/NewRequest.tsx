@@ -8,7 +8,6 @@ import { GlobalContext } from 'src/useContext/GlobalContext'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 const NewRequest: FC = () => {
-  const handleSubmit = () => {}
   const { user } = useContext(GlobalContext)
   return (
     <DefaultLayout>
@@ -20,7 +19,7 @@ const NewRequest: FC = () => {
             <h3>Thông tin liên lạc</h3>
             <hr style={{ marginBottom: '20px' }} />
             <div className={styles.infomation}>
-              <Form action='' onSubmit={handleSubmit}>
+              <Form action='' >
                 <Input label='Địa chỉ email' type='text' require />
                 <div className='mb-15' />
                 <Input label='Họ tên' type='text' require name='hoten' />

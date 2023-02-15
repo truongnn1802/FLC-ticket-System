@@ -148,7 +148,7 @@ const Profile: FC = () => {
               {user?.hoten && (
                 <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' handleClick={() => setReset(true)} />
               )}
-              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' handleClick={() => {}} />
+              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />
             </div>
             <br />
             <br />

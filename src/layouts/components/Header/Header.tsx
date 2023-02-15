@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import Logo from 'src/assets/images/logo.png'
 import { GlobalContext } from 'src/useContext/GlobalContext'
 import styles from './index.module.scss'
-import Form from 'src/components/Form'
-import Button from 'src/components/Button'
 export const Header: FC = () => {
   const { user } = useContext(GlobalContext)
   return (

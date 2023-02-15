@@ -30,7 +30,6 @@ const InputIcon = ({
 }: Props): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [value, setValue] = useState<string>('')
-  useEffect(() => {}, [value])
 
   return (
     <div className={styles.wrapperInputIcon} style={{ width: width, ...style }}>

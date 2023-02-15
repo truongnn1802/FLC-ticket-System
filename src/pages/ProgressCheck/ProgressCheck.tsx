@@ -21,7 +21,7 @@ const ProgressCheck: FC = () => {
 
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.ProgressCheck}>
-          <Form action='' onSubmit={handleSubmit}>
+          <Form action=''>
             <InputIcon label={<FontAwesomeIcon icon={faEnvelope} />} placeHolder='Địa chỉ Email' type='text' />
             <div className='mb-15' />
             <InputIcon label={<FontAwesomeIcon icon={faTicketAlt} />} placeHolder='Ticket' type='text' />
