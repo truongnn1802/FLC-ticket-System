@@ -30,7 +30,7 @@ const Login: FC = () => {
       JSON.parse(accountList).find(
         (account: any) => account.hoten === dataInput.username && account.password === dataInput.password
       )
-    if (account || (dataInput.username==="admin"  && dataInput.password === "admin")) {
+    if (account) {
       handleAddUser(account)
       navigate('/')
       return
