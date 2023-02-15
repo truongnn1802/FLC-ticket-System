@@ -6,6 +6,14 @@
   @media only screen and (max-width: 639px){
   margin-bottom: 20px;
   }
+  .banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 35%;
+    background-position: center;
+}
+
+  }
   .textCenter {
     position: absolute;
     top: 50%;
@@ -35,7 +43,7 @@
       margin: 0 0 10px;
     }
   }
-}
+
 .boxList {
 
 }
