@@ -1,16 +1,15 @@
-import { FC } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faEnvelope, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FC } from 'react'
 import Button from 'src/components/Button'
-import Capcha from 'src/components/Capcha'
 import Form from 'src/components/Form'
-import Input from 'src/components/Input'
-import Select from 'src/components/Select'
+import InputIcon from 'src/components/InputIcon'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
-import InputIcon from 'src/components/InputIcon'
 const ProgressCheck: FC = () => {
-  const handleSubmit = () => {}
+  const handleSubmit = () => {
+    undefined
+  }
   return (
     <DefaultLayout>
       <section className='container'>
@@ -36,8 +35,8 @@ const ProgressCheck: FC = () => {
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                Anh/chị đã có tài khoản chưa? <a href='login.php'>Đăng nhập</a> hoặc{' '}
-                <a href='account.php?do=create'> đăng ký để tạo tài khoản </a> để truy cập tất cả các phiếu yêu cầu.
+                Anh/chị đã có tài khoản chưa? <a href='/login'>Đăng nhập</a> hoặc
+                <a href='/register'> đăng ký để tạo tài khoản </a> để truy cập tất cả các phiếu yêu cầu.
               </li>
 
               <li>
@@ -45,7 +44,7 @@ const ProgressCheck: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
                 Đây là lần đầu anh/chị truy cập hệ thống? hoặc anh/chị quên mã số phiếu đã tạo, hãy{' '}
-                <a href='open.php'>mở phiếu yêu cầu (ticket) mới</a>.
+                <a href='/ticket'>mở phiếu yêu cầu (ticket) mới</a>.
               </li>
             </ul>
           </div>
