@@ -105,7 +105,7 @@ const Note = () => {
             <div className={styles.presentation}>
               <a href='/'>Đã đóng</a>
               <span>
-                <Badge count={3} showZero color='#777' />
+                <Badge count={2} showZero color='#777' />
               </span>
             </div>
           </Col>
