@@ -2,6 +2,7 @@ import { FC, useContext } from 'react'
 import Button from 'src/components/Button'
 import Capcha from 'src/components/Capcha'
 import Form from 'src/components/Form'
+import FormRequest from 'src/components/FormRequest'
 import Input from 'src/components/Input'
 import Select from 'src/components/Select'
 import { GlobalContext } from 'src/useContext/GlobalContext'
@@ -69,7 +70,9 @@ const NewRequest: FC = () => {
             <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' />
             <div style={{ marginBottom: '30px' }}></div>
             <hr />
-
+            <div>
+              <FormRequest/>
+            </div>
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
               <Button text='Gửi đi' bgColor='#5cb85c' borderColor='#4cae4c' />
               <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' />
