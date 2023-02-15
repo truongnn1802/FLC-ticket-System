@@ -1,6 +1,7 @@
 import { faCheck, faEnvelope, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
 import InputIcon from 'src/components/InputIcon'
@@ -32,8 +33,8 @@ const ProgressCheck: FC = () => {
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                Anh/chị đã có tài khoản chưa? <a href='login.php'>Đăng nhập</a> hoặc{' '}
-                <a href='account.php?do=create'> đăng ký để tạo tài khoản </a> để truy cập tất cả các phiếu yêu cầu.
+                Anh/chị đã có tài khoản chưa? <Link to='/login'>Đăng nhập</Link> hoặc
+                <Link to='/register'> đăng ký để tạo tài khoản </Link> để truy cập tất cả các phiếu yêu cầu.
               </li>
 
               <li>
@@ -41,7 +42,7 @@ const ProgressCheck: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
                 Đây là lần đầu anh/chị truy cập hệ thống? hoặc anh/chị quên mã số phiếu đã tạo, hãy{' '}
-                <a href='open.php'>mở phiếu yêu cầu (ticket) mới</a>.
+                <Link to='/ticket'>mở phiếu yêu cầu (ticket) mới</Link>.
               </li>
             </ul>
           </div>

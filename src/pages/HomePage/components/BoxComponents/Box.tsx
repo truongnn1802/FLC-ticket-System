@@ -1,15 +1,16 @@
 import classnames from 'classnames'
 import { PropsBox } from 'src/types/utils.type'
 import styles from './index.module.scss'
-const BoxComponent = ({ title, content, txtButton, icon, arrColor }: PropsBox) => {
+import { Link } from 'react-router-dom'
+const BoxComponent = ({ title, content, txtButton, icon, arrColor,href }: PropsBox) => {
   return (
     <div className={styles.box} style={{ borderColor: arrColor[0] }}>
       <section className={styles.body}>
         <h2>{title}</h2>
         {content}
-        <a href='/' className={classnames(styles.button, 'btn')} style={{ backgroundColor: arrColor[1] }}>
+        <Link to={href} className={classnames(styles.button, 'btn')} style={{ backgroundColor: arrColor[1] }}>
           {txtButton}
-        </a>
+        </Link>
       </section>
       <div className={styles.iconBox} style={{ borderTopColor: arrColor[0] }}>
         <img src={icon} alt={title} />

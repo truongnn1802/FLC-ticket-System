@@ -103,7 +103,7 @@ const Note = () => {
           </Col>
           <Col xl={8}>
             <div className={styles.presentation}>
-              <a href='/'>Đã đóng</a>
+            <span>Đã đóng</span>
               <span>
                 <Badge count={2} showZero color='#777' />
               </span>

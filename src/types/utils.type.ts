@@ -3,6 +3,7 @@ export interface ItemBox {
   content: string | JSX.Element
   txtButton: string
   icon: string
+  href: string
 }
 
 export interface PropsBox extends ItemBox {

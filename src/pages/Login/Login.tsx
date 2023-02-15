@@ -41,28 +41,6 @@ const Login: FC = () => {
     <DefaultLayout>
       <section className='container'>
         <h2 className={styles.title}>Hệ thống Phiếu Yêu cầu - Support Ticket System</h2>
-        <p>
-          1. Để có thể gửi Phiếu Yêu cầu, anh/chị cần đăng nhập vào tài khoản{' '}
-          <strong>
-            <a className={styles.link} href='mailto:username@flc.vn' target='_blank' rel='noreferrer'>
-              username@flc.vn
-            </a>
-          </strong>{' '}
-          của mình qua form dưới đây. <br></br> 2. Nếu email của anh/chị không phải là{' '}
-          <strong>
-            <a className={styles.link} href='mailto:username@flc.vn' target='_blank' rel='noreferrer'>
-              username@flc.vn
-            </a>
-          </strong>
-          , vui lòng mở một tài khoản mới trên hệ thống này theo email của anh/chị và kích hoạt lần đầu. <br></br> 3.
-          Nếu anh/chị quên mật khẩu, hãy nhấn{' '}
-          <strong>
-            <a className={styles.link} href='https://ticket.flc.vn/pwreset.php' target='_blank' rel='noreferrer'>
-              vào đây
-            </a>
-          </strong>{' '}
-          và tiến hành các bước tiếp theo để khôi phục.
-        </p>
 
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.loginForm}>
