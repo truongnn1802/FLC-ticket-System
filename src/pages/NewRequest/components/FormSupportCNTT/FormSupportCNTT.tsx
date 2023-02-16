@@ -31,7 +31,7 @@ const FormSupportCNTT: FC = () => {
   const formRef = useRef<HTMLFormElement>(null)
 
   return (
-    <section className='container' style={{ minHeight: 'calc(100vh - 245px)' }}>
+    <section className='container min-height'>
       <h3>CHI TIẾT YÊU CẦU DỊCH VỤ CNTT</h3>
       <span>Những trường có dấu hoa thị đỏ là bắt buộc phải điền.</span>
       <hr style={{ marginBottom: '20px' }} />
@@ -40,36 +40,6 @@ const FormSupportCNTT: FC = () => {
           <Input label='1.Yêu cầu cần hỗ trợ' type='text' require name='vanDe' error={errors?.vanDe} />
           <div className='mb-15' />
           <Input label='2. Nội dung yêu cầu' type='text' require name='moTa' error={errors?.moTa} />
-          <div className='mb-15' />
-          <Select widthLabel='195px' label='Múi giờ' require setSlected='Viet Nam' width='400px' name='timeZone' />
-          <Input label='* Khu vực | Tầng ' type='text' require widthLabel='150px' width='406px' name='sdt' />
-          <div className='mb-15' />
-
-          <Input
-            label='Số điện thoại'
-            type='text'
-            require
-            widthLabel='195px'
-            width='406px'
-            name='sdt'
-            error={errors?.sdt}
-          />
-          <Input
-            label='Số máy lẻ'
-            type='text'
-            widthLabel='76px'
-            width='165px'
-            styleLabel={{ padding: 0 }}
-            styleInput={{ margin: 0, fontWeight: 400 }}
-            name='phoneExt'
-          />
-          <div className='mb-15' />
-          <Input label='Ultraview ID' error={errors?.password} type='text' name='utraId' />
-          <div className='mb-15' />
-          <Input label='Ultraview Pass' error={errors?.newpassword} type='password' name='ultraPass' />
-          <div className='mb-15' />
-          <br />
-          <br />
         </Form>
       </div>
     </section>

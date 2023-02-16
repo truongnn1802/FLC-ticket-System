@@ -34,7 +34,7 @@ const ProgressCheck: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
                 Anh/chị đã có tài khoản chưa? <Link to='/'>Đăng nhập</Link> hoặc
-                <Link to='/register'> đăng ký để tạo tài khoản </Link> để truy cập tất cả các phiếu yêu cầu.
+                <Link to='/dang-ky'> đăng ký để tạo tài khoản </Link> để truy cập tất cả các phiếu yêu cầu.
               </li>
 
               <li>

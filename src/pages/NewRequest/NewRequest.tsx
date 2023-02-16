@@ -31,7 +31,7 @@ const NewRequest = () => {
 
   return (
     <DefaultLayout>
-      <section className='container' style={{ minHeight: 'calc(100vh - 245px)' }}>
+      <section className='container min-height' >
         <h2 className={styles.title}>Tạo yêu cầu mới</h2>
         <p style={{ margin: '0 0 10px' }}>Hãy điền vào bảng dưới đây để mở phiếu yêu cầu mới.</p>
         {!user?.isLogin ? (
@@ -86,7 +86,7 @@ const NewRequest = () => {
               <p>{user?.hoten}</p>
             </div>
             <hr style={{ margin: '10px 0 20px' }} />
-            <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' onChange={handleChangeTopic} />
+            <Select label='Dịch vụ CNTT' require setSlected='---Chọn một dịch vụ CNTT' onChange={handleChangeTopic} />
             {Component(renderComponent)}
             <div style={{ marginBottom: '30px' }}></div>
             <hr />

@@ -8,6 +8,7 @@ import InternalDocument from 'src/pages/InternalDocument/InternalDocument'
 import Logout from 'src/pages/Logout'
 import Profile from 'src/pages/Profile'
 import Note from 'src/pages/Note'
+import NotFoundPage from 'src/pages/NotFoundPage'
 export default function useRouteElements() {
   const routes = useRoutes([
     {
@@ -45,7 +46,11 @@ export default function useRouteElements() {
     {
       path: '/ticket',
       element: <Note />
-    }
+    },
+    {
+      path: '*',
+      element: <NotFoundPage />
+    },
   ])
   return routes
 }

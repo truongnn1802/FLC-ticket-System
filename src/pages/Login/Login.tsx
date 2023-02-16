@@ -58,7 +58,7 @@ const Login: FC = () => {
   return (
     <DefaultLayout>
       <section className='container min-height'>
-        <h2 className={styles.title}>Hệ thống Phiếu Yêu cầu - Support Ticket System</h2>
+        <h2 className={styles.title}>Hệ thống IT Helpdesk</h2>
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.loginForm}>
           <Form action='' ref={formRef}>
@@ -83,16 +83,24 @@ const Login: FC = () => {
                 width='100%'
                 handleClick={handleSubmit}
               />
+              <div className={styles.createAccount}>
+                <Link className={styles.link} to='/dang-ky'>
+                  <span> Tạo tài khoản mới!</span>
+                </Link>
+                <Link className={styles.link} to='/yeu-cau-moi'>
+                   <span> Mở phiếu yêu cầu (ticket) mới</span>
+                </Link>
+              </div>
             </div>
           </Form>
-          <div className={styles.partRight}>
+          {/* <div className={styles.partRight}>
             <ul>
               <li>
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
-                </span>{' '}
+                </span>
                 Anh/chị chưa đăng ký?{' '}
-                <Link className={styles.link} to='/register'>
+                <Link className={styles.link} to='/dang-ky'>
                   Hãy tạo tài khoản mới!
                 </Link>
               </li>
@@ -116,7 +124,7 @@ const Login: FC = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </section>
     </DefaultLayout>

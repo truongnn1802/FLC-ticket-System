@@ -49,9 +49,9 @@ const Select = ({
           handleChangeValue(e.target.value)
         }}
       >
-        <option value='1'>One</option>
-        <option value='2'>Two</option>
-        <option value='3'>Three</option>
+        <option value='0'>Chọn 1 dịch vụ CNTT</option>
+        <option value='1'>Dịch vụ hỗ trợ phần cứng </option>
+        <option value='2'>Dịch vụ hỗ trợ phần mềm</option>
       </select>
     </div>
   )

@@ -70,7 +70,7 @@ const Register: FC = () => {
 
   return (
     <DefaultLayout>
-      <section className='container' style={{ minHeight: 'calc(100vh - 245px)' }}>
+      <section className='container min-height'>
         <h2 className={styles.title}>Tạo yêu cầu mới</h2>
         <p style={{ margin: '0 0 10px' }}>Hãy điền vào bảng dưới đây để mở phiếu yêu cầu mới.</p>
         <h3>Thông tin liên lạc</h3>
@@ -99,10 +99,10 @@ const Register: FC = () => {
               styleInput={{ margin: 0, fontWeight: 400 }}
               name='phoneExt'
             />
-            <h3 style={{ padding: '0 15px' }}>Tùy chỉnh cá nhân</h3>
+            {/* <h3 style={{ padding: '0 15px' }}>Tùy chỉnh cá nhân</h3>
             <hr style={{ margin: '10px 0 20px' }} />
             <Select widthLabel='195px' label='Múi giờ' require setSlected='Viet Nam' width='500px' name='timeZone' />
-            <div className='mb-15' />
+            <div className='mb-15' /> */}
             <h3 style={{ padding: '0 15px' }}>Mật khẩu xác thực vào hệ thống</h3>
             <hr style={{ margin: '25px 0 20px' }} />
             <Input label='Tạo mật khẩu mới' error={errors?.password} type='password' require name='password' />
