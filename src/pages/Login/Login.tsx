@@ -1,6 +1,7 @@
 import { faCheck, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FC, useContext, useRef } from 'react'
+import axios from 'axios'
+import { FC, useContext, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
@@ -13,6 +14,22 @@ const Login: FC = () => {
   const formRef = useRef<HTMLFormElement>(null)
   const { handleAddUser } = useContext(GlobalContext)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const res = axios.post(
+      'http://103.11.199.96:8069/api/auth/token',
+      {},
+      {
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          login: 'admin',
+          password: 1,
+          db: 'HRM'
+        }
+      }
+    )
+    console.log(res)
+  }, [])
 
   const handleSubmit = () => {
     const dataInput: any = {}
