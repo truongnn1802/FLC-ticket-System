@@ -15,11 +15,10 @@ const HomePage: FC = () => {
 
   const listBox: PropsBox[] = [
     {
-      title: 'Tạo yêu cầu mới',
+      title: 'TIẾP NHẬN & PHÂN LOẠI YÊU CẦU',
       content: (
         <p>
-          Với người dùng sử dụng email <b>@tst.vn</b>, các anh/chị đăng nhập bằng email và mật khẩu của mình để tạo
-          phiếu yêu cầu hỗ trợ. Đối với các email khác, vui lòng tạo, kích hoạt tài khoản lần đầu để bắt đầu sử dụng.
+        Hệ thống sẽ tự động tiếp nhận yêu cầu, phân loại, gán trách nhiệm cho chuyên viên kỹ thuật chuyên trách. Người sử dụng có thể theo dõi trạng thái xử lý yêu cầu, nhận xét, đánh giá về chất lượng dịch vụ.
         </p>
       ),
       txtButton: 'Tạo yêu cầu mới',
@@ -28,27 +27,22 @@ const HomePage: FC = () => {
       href: user?.hoten ? '/new-request' : '/login'
     },
     {
-      title: 'Kiểm tra tiến độ',
+      title: ' PHẢN HỒI NHANH CHÓNG',
       content: (
         <p>
-          Hệ thống lưu lại lịch sử các lần giao tiếp của anh/chị với các Ban, Phòng, Bộ phận chức năng, vui lòng chuẩn
-          bị sẵn email và số phiếu yêu cầu của anh/chị để kiểm tra tiến độ phối hợp xử lý sự việc.
+          Phòng Công nghệ quản trị luôn sẵn sàng phản hồi các yêu cầu dịch vụ CNTT của cán bộ nhân viên TST nhanh chóng. Thời gian phản hồi theo cam kết chất lượng dịch vụ SLA
         </p>
       ),
-      txtButton: 'Kiểm tra tiến độ',
+      txtButton: 'PHẢN HỒI NHANH CHÓNG',
       icon: Icon2,
       arrColor: ['#0473aa', '#337ab7', '#2e6da4'],
       href: user?.hoten ? '/progress-check' : '/login'
     },
     {
-      title: 'Các vấn đề tương tác',
+      title: 'DỊCH VỤ 24/7',
       content: (
         <p>
-          - Báo hỗ trợ về CNTT (v2.0)<br></br>- Đăng ký quảng cáo WIFI Marketing/Màn hình TV<br></br>- Đăng ký tài khoản
-          Polycom/Email/Thẻ Từ<br></br>- Đặt lịch họp/Báo hỏng Tài sản/Thiết bị<br></br>
-          <b>* SẮP RA MẮT *</b>
-          <br></br>- Báo nguy cơ về an ninh, PCCC
-          <br></br>- Báo hỗ trợ nghiệp vụ HiStaff và giải đáp các vấn đề pháp chế/nhân sự.
+          Đội ngũ chuyên viên kỹ thuật của phòng Công nghệ quản trị luôn sẵn sàng hỗ trợ cán bộ nhân viên xử lý yêu cầu, sự cố 24/7 qua Phone, Email, TeamViewer, Ultraviiew….
         </p>
       ),
       txtButton: 'BÁO SỰ VIỆC MỌI LÚC, MỌI NƠI',
@@ -57,13 +51,10 @@ const HomePage: FC = () => {
       href: user?.hoten ? '/new-request' : '/login'
     },
     {
-      title: 'Đơn vị tiếp nhận',
+      title: 'CHẤT LƯỢNG DỊCH VỤ & BÁO CÁO ',
       content: (
         <p>
-          Tương ứng với các vấn đề mà anh/chị phản ánh/đề xuất/yêu cầu hỗ trợ, Hệ thống Support Ticket này sẽ chuyển nội
-          dung tới các Ban, Phòng, Bộ phận tương ứng.<br></br>Đối với các công việc cần xử lý gấp, vui lòng liên hệ qua
-          điện thoại, tin nhắn sms/viber...Tuy nhiên, Hỗ trợ viên sẽ tạo phiếu bổ sung cho vấn đề/sự việc đã được hỗ trợ
-          xong.
+          Phòng Công nghệ quản trị hướng tới dịch vụ hỗ trợ người dùng chuyên nghiệp hơn, làm hài lòng người sử dụng về cam kết dịch vụ thời gian – chất lượng. Báo cáo chi tiết, minh bạch và realtime.
         </p>
       ),
       txtButton: 'VIỆC KHÔNG TRÔI, NẮM BẮT KỊP THỜI',
