@@ -1,21 +1,20 @@
-import { forwardRef, Ref } from 'react'
+import { forwardRef, Ref,FormHTMLAttributes, useRef, useEffect, LegacyRef } from 'react'
 import styles from './index.module.scss'
 
-type Props = {
-  children: string | JSX.Element | JSX.Element[]
-  action?: string
+interface FormProps extends FormHTMLAttributes<HTMLFormElement>{
+  bgColor?: string
+  borderColor?: string
 }
-
 //onclick btn gửi=> gọi hàm onsubmit
 
-const Form = ({ children, action }: Props, ref: Ref<HTMLFormElement>): JSX.Element => {
+const Form = ({ children,...rest }: FormProps,formRef: LegacyRef<HTMLFormElement> | undefined): JSX.Element => {
   // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
   //   if (onSubmit) onSubmit()
   //   event.preventDefault()
   // }
-  // const formRef = useRef<HTMLFormElement>(null)
+ 
   return (
-    <form onSubmit={(e) => e.preventDefault()} action={action} ref={ref} style={styles}>
+    <form style={styles} {...rest} ref={formRef}>
       {children}
     </form>
   )

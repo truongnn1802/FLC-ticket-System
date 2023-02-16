@@ -44,13 +44,13 @@ export default function useRouteElements() {
       element: <Profile />
     },
     {
-      path: '/ticket',
+      path: '/phieu',
       element: <Note />
     },
     {
       path: '*',
       element: <NotFoundPage />
-    },
+    }
   ])
   return routes
 }

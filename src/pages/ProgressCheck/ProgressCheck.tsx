@@ -42,7 +42,7 @@ const ProgressCheck: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
                 Đây là lần đầu anh/chị truy cập hệ thống? hoặc anh/chị quên mã số phiếu đã tạo, hãy{' '}
-                <Link to='/ticket'>mở phiếu yêu cầu (ticket) mới</Link>.
+                <Link to='/phieu'>mở phiếu yêu cầu (ticket) mới</Link>.
               </li>
             </ul>
           </div>

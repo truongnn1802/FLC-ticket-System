@@ -5,6 +5,10 @@
   .contentFooter {
     font-size: 1.1rem;
     padding-top: 8px;
-    text-align: right;
+    text-align: center;
+    color: white;
+    a{
+      text-decoration: solid;
+    }
   }
 }

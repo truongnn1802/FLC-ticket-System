@@ -64,7 +64,7 @@ const HomePage: FC = () => {
       txtButton: 'VIỆC KHÔNG TRÔI, NẮM BẮT KỊP THỜI',
       icon: Icon4,
       arrColor: ['#4caf50', '#5cb85c', '#4cae4c'],
-      href: user?.hoten ? '/ticket' : '/'
+      href: user?.hoten ? '/phieu' : '/'
     }
   ]
 

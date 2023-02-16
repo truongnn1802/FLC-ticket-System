@@ -31,7 +31,7 @@ const NewRequest = () => {
 
   return (
     <DefaultLayout>
-      <section className='container min-height' >
+      <section className='container min-height'>
         <h2 className={styles.title}>Tạo yêu cầu mới</h2>
         <p style={{ margin: '0 0 10px' }}>Hãy điền vào bảng dưới đây để mở phiếu yêu cầu mới.</p>
         {!user?.isLogin ? (
@@ -66,9 +66,15 @@ const NewRequest = () => {
                 />
                 <hr style={{ margin: '25px 0 20px' }} />
                 <div style={{ textAlign: 'center' }}>
-                  <Button text='Gửi đi' bgColor='#5cb85c' borderColor='#4cae4c' />
-                  <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' />
-                  <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />
+                  <Button margin='0 5px' width='150px' bgColor='#5cb85c' borderColor='#4cae4c'>
+                    Gửi đi
+                  </Button>
+                  <Button margin='0 5px' width='150px' bgColor='#f0ad4e' borderColor='#eea236'>
+                    Làm mới
+                  </Button>
+                  <Button margin='0 5px' width='150px' bgColor='#ac2925' borderColor='#d43f3a'>
+                    Hủy bỏ
+                  </Button>
                 </div>
                 <br />
                 <br />
@@ -92,9 +98,17 @@ const NewRequest = () => {
             <hr />
 
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
-              <Button text='Gửi đi' bgColor='#5cb85c' borderColor='#4cae4c' />
-              <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' />
-              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />
+              <div style={{ textAlign: 'center' }}>
+                <Button margin='0 5px' width='150px' bgColor='#5cb85c' borderColor='#4cae4c'>
+                  Gửi đi
+                </Button>
+                <Button margin='0 5px' width='150px' bgColor='#f0ad4e' borderColor='#eea236'>
+                  Làm mới
+                </Button>
+                <Button margin='0 5px' width='150px' bgColor='#ac2925' borderColor='#d43f3a'>
+                  Hủy bỏ
+                </Button>
+              </div>
             </div>
           </>
         )}

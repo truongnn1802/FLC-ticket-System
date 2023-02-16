@@ -23,7 +23,7 @@ export const Header: FC = () => {
               Tạo yêu cầu mới
             </Link>
             {user.isLogin && (
-              <Link to='/ticket' className={styles.navItem}>
+              <Link to='/phieu' className={styles.navItem}>
                 Phiếu
               </Link>
             )}

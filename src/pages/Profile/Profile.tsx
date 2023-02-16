@@ -48,7 +48,8 @@ const Profile: FC = () => {
     }
   }, [reset])
 
-  const handleSubmit = () => {
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     const dataInput: any = {}
     let errClone = { ...errors }
     let listInput: NodeListOf<HTMLInputElement>
@@ -102,7 +103,7 @@ const Profile: FC = () => {
         <h3>Thông tin liên lạc</h3>
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.infomation}>
-          <Form action='' ref={formRef}>
+          <Form action='' ref={formRef} onSubmit={handleSubmit}>
             <Input label='Địa chỉ email' type='email' require name='email' error={errors?.email} />
             <div className='mb-15' />
             <Input label='Họ tên' type='text' require name='hoten' error={errors?.hoten} />
@@ -137,16 +138,17 @@ const Profile: FC = () => {
             <div className='mb-15' />
             <Input label='Xác nhận mật khẩu mới' error={errors?.renewPassword} type='password' name='renewPassword' />
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
-              <Button
-                text={user?.hoten ? 'Đăng ký' : 'Cập nhật'}
-                bgColor='#5cb85c'
-                borderColor='#4cae4c'
-                handleClick={handleSubmit}
-              />
+              <Button margin='0 5px' width='150px' bgColor='#5cb85c' borderColor='#4cae4c'>
+                {user?.hoten ? 'Đăng ký' : 'Cập nhật'}
+              </Button>
               {user?.hoten && (
-                <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' handleClick={() => setReset(true)} />
+                <Button margin='0 5px' width='150px' bgColor='#f0ad4e' borderColor='#eea236' onClick={() => setReset(true)}>
+                  Làm mới
+                </Button>
               )}
-              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />
+              <Button margin='0 5px' width='150px' bgColor='#ac2925' borderColor='#d43f3a'>
+                Hủy bỏ
+              </Button>
             </div>
             <br />
             <br />
