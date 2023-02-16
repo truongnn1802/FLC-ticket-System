@@ -1,5 +1,4 @@
 import styles from './index.module.scss'
-
 type Props = {
   label?: string
   require?: boolean
@@ -9,8 +8,9 @@ type Props = {
   styleLabel?: object
   styleInput?: object
   setSlected?: string
-  name?: string,
-  onChange?:any
+  name?: string
+  onChange?: (value?: string) => void
+  data?: { value: string; isSelectd: string; name: string }[]
 }
 
 const Select = ({
@@ -20,9 +20,9 @@ const Select = ({
   width = '100%',
   style,
   styleLabel,
-  setSlected,
   name,
-  onChange
+  onChange,
+  data
 }: Props): JSX.Element => {
   const inlineStyle: object = {
     width,
@@ -33,8 +33,8 @@ const Select = ({
     flexBasis: widthLabel,
     ...styleLabel
   }
-  const handleChangeValue = (value:string)=>{
-    onChange(value)
+  const handleChangeValue = (value: string) => {
+    if (onChange) onChange(value)
   }
   return (
     <div className={styles.wrapperInput} style={inlineStyle}>
@@ -42,11 +42,28 @@ const Select = ({
         {label}
         <span style={{ color: require ? 'red' : 'transparent' }}>*</span>
       </label>
-      <select name={name} className='itemForm' onChange={e=>{handleChangeValue(e.target.value)}}>
-        <option selected>{setSlected}</option>
-        <option value='1'>One</option>
-        <option value='2'>Two</option>
-        <option value='3'>Three</option>
+      <select
+        name={name}
+        className='itemForm'
+        onChange={(e) => {
+          handleChangeValue(e.target.value)
+        }}
+      >
+        {data?.map((item, index) => {
+          if (item.isSelectd) {
+            return (
+              <option value={item?.value} key={index} selected>
+                {item?.name}
+              </option>
+            )
+          } else {
+            return (
+              <option value={item?.value} key={index}>
+                {item?.name}
+              </option>
+            )
+          }
+        })}
       </select>
     </div>
   )

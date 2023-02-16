@@ -1,5 +1,5 @@
 export type dataLogin = {
-  login:string
-  password:string
-  db:string
+  login: string
+  password: string
+  db: string
 }

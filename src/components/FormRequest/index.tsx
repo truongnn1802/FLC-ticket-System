@@ -1,4 +1,4 @@
-import { Form, Input } from 'antd'
+import { Input } from 'antd'
 
 import styles from './index.module.scss'
 

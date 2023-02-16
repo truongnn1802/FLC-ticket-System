@@ -1,4 +1,4 @@
-import { FC, useContext,useState,useEffect } from 'react'
+import { useContext, useState } from 'react'
 import Button from 'src/components/Button'
 import Capcha from 'src/components/Capcha'
 import Form from 'src/components/Form'
@@ -10,23 +10,22 @@ import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import FormSupportCNTT from './components/FormSupportCNTT'
 import styles from './index.module.scss'
 
-
 const NewRequest = () => {
-  const [renderComponent,setRenderComponent] = useState<string>("0")
+  const [renderComponent, setRenderComponent] = useState<string | undefined>('0')
   const { user } = useContext(GlobalContext)
 
-  const Component =(id:string)=> {
-    switch(id){
+  const Component = (id: string | undefined) => {
+    switch (id) {
       case '1':
-      return <FormSupportCNTT/>
+        return <FormSupportCNTT />
       case '2':
-      return  <FormRequest/>
+        return <FormRequest />
       default:
         return null
     }
   }
 
-  const handleChangeTopic = (value:string)=>{
+  const handleChangeTopic = (value: string | undefined) => {
     setRenderComponent(value)
   }
 
@@ -40,7 +39,7 @@ const NewRequest = () => {
             <h3>Thông tin liên lạc</h3>
             <hr style={{ marginBottom: '20px' }} />
             <div className={styles.infomation}>
-              <Form action='' >
+              <Form action=''>
                 <Input label='Địa chỉ email' type='text' require />
                 <div className='mb-15' />
                 <Input label='Họ tên' type='text' require name='hoten' />
@@ -87,11 +86,11 @@ const NewRequest = () => {
               <p>{user?.hoten}</p>
             </div>
             <hr style={{ margin: '10px 0 20px' }} />
-            <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' onChange={handleChangeTopic}/>
+            <Select label='Chủ đề' require setSlected='---Chọn một chủ đề---' onChange={handleChangeTopic} />
             {Component(renderComponent)}
             <div style={{ marginBottom: '30px' }}></div>
-            <hr />      
-             
+            <hr />
+
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
               <Button text='Gửi đi' bgColor='#5cb85c' borderColor='#4cae4c' />
               <Button text='Làm mới' bgColor='#f0ad4e' borderColor='#eea236' />

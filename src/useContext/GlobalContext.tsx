@@ -31,17 +31,22 @@ export const GlobalProvider = ({ children }: Props) => {
     password: '',
     isLogin: false
   })
-  
+
   useEffect(() => {
-    window.localStorage.setItem('listAccount', JSON.stringify([{
-      email: 'admin@gmail.com',
-      hoten: 'admin',
-      sdt: '0987654321',
-      phoneExt: '',
-      timeZone: '',
-      password: 'admin',
-      isLogin: false
-    }]))
+    window.localStorage.setItem(
+      'listAccount',
+      JSON.stringify([
+        {
+          email: 'admin@gmail.com',
+          hoten: 'admin',
+          sdt: '0987654321',
+          phoneExt: '',
+          timeZone: '',
+          password: 'admin',
+          isLogin: false
+        }
+      ])
+    )
     const acc = window.localStorage.getItem('account')
     if (acc) {
       setUser(JSON.parse(acc))

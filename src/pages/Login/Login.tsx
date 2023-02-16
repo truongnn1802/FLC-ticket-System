@@ -5,8 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
 import InputIcon from 'src/components/InputIcon'
+import DefaultLayout from 'src/layouts/BaseLayout/DefaultLayout'
 import { GlobalContext } from 'src/useContext/GlobalContext'
-import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 
 const Login: FC = () => {
@@ -23,7 +23,7 @@ const Login: FC = () => {
         dataInput[input.name] = input.value
       }
     }
-    
+
     const accountList = window.localStorage.getItem('listAccount')
     const account =
       accountList &&

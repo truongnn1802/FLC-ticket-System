@@ -3,11 +3,10 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
     plugins: [
-      tailwindcss('./tailwind.config.cjs'), 
-      autoprefixer,
+      require('postcss-nested'),
       require('postcss-import'),
       require('tailwindcss/nesting')(require('postcss-nesting')),
-      require('autoprefixer'),
-      require('tailwindcss'),
+      tailwindcss('./tailwind.config.cjs'), 
+      autoprefixer,
     ],
 };

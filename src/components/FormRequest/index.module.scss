@@ -1,16 +1,15 @@
-
-  .hr{
-    margin: 10px 0 20px;
-  }
-.formGroup{
-  span{
+.hr {
+  margin: 10px 0 20px;
+}
+.formGroup {
+  span {
     min-width: 150px;
-    .required{
+    .required {
       color: red;
       margin: 0 5px;
     }
   }
-  .inputFormGroup{
+  .inputFormGroup {
     flex: 1;
   }
   display: flex;
