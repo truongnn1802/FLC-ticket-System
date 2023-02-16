@@ -59,7 +59,6 @@ const Login: FC = () => {
     <DefaultLayout>
       <section className='container min-height'>
         <h2 className={styles.title}>Hệ thống IT Helpdesk</h2>
-        <hr style={{ marginBottom: '20px' }} />
         <div className={styles.loginForm}>
           <Form action='' ref={formRef}>
             <InputIcon
