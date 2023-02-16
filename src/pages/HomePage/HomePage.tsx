@@ -74,7 +74,7 @@ const HomePage: FC = () => {
         <section className={styles.support}>
           <div className={styles.banner} style={{ backgroundImage: `url(${Logo})` }}></div>
         </section>
-        <section>
+        <section className={styles.contentBox}>
           <div className='container'>
             <div className={styles.boxList}>
               {listBox?.map((box, index) => (

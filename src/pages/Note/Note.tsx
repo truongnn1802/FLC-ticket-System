@@ -68,7 +68,7 @@ const Note = () => {
 
   return (
     <DefaultLayout>
-      <section className='container'>
+      <section className='container min-height'>
         <div className={styles.titleHeader}>
           <h2>Phiếu</h2>
           <a className={styles.icSyn} href='/'>
