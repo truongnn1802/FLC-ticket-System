@@ -11,7 +11,7 @@ export const Header: FC = () => {
         <div className={styles.container}>
           <div className={styles.pathLeft}>Welcome {user.isLogin ? user.hoten : 'Khách'}</div>
           <div className='partRight'>
-            <Link to='/' className={styles.navItem}>
+            <Link to='/trang-chu' className={styles.navItem}>
               Trang chủ
             </Link>
             {/* {user.isLogin && (
@@ -19,7 +19,7 @@ export const Header: FC = () => {
                 Tài liệu nội bộ
               </Link>
             )} */}
-            <Link to='/new-request' className={styles.navItem}>
+            <Link to='/yeu-cau-moi' className={styles.navItem}>
               Tạo yêu cầu mới
             </Link>
             {user.isLogin && (
@@ -28,22 +28,22 @@ export const Header: FC = () => {
               </Link>
             )}
             {user.isLogin && (
-              <Link to='/profile' className={styles.navItem}>
+              <Link to='/thong-tin-ca-nhan' className={styles.navItem}>
                 Thông tin cá nhân
               </Link>
             )}
             {!user.isLogin && (
-              <Link to='/progress-check' className={styles.navItem}>
+              <Link to='/kiem-tra-tien-do' className={styles.navItem}>
                 Kiểm tra tiến độ
               </Link>
             )}
             {!user.isLogin && (
-              <Link to='/login' className={styles.navItem}>
+              <Link to='/' className={styles.navItem}>
                 Đăng nhập
               </Link>
             )}
             {user.isLogin && (
-              <Link to='/logout' className={styles.navItem}>
+              <Link to='/dang-xuat' className={styles.navItem}>
                 Đăng xuất
               </Link>
             )}

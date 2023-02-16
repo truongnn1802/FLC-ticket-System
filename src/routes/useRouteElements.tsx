@@ -11,23 +11,23 @@ import Note from 'src/pages/Note'
 export default function useRouteElements() {
   const routes = useRoutes([
     {
-      path: '/',
+      path: '/trang-chu',
       element: <HomePage />
     },
     {
-      path: '/login',
+      path: '/',
       element: <Login />
     },
     {
-      path: '/new-request',
+      path: '/yeu-cau-moi',
       element: <NewRequest />
     },
     {
-      path: '/progress-check',
+      path: '/kiem-tra-tien-do',
       element: <ProgressCheck />
     },
     {
-      path: '/register',
+      path: '/dang-ky',
       element: <Register />
     },
     {
@@ -35,11 +35,11 @@ export default function useRouteElements() {
       element: <InternalDocument />
     },
     {
-      path: '/logout',
+      path: '/dang-xuat',
       element: <Logout />
     },
     {
-      path: '/profile',
+      path: '/thong-tin-ca-nhan',
       element: <Profile />
     },
     {

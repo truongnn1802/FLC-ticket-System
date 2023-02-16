@@ -1,6 +1,6 @@
 import { URL } from 'src/constants/api.constants'
 import { AuthResponse } from 'src/types/auth.type'
-import { dataLogin } from 'src/types/login.type'
+import { dataLogin } from 'src/types/.type'
 import http from 'src/utils/http'
 
 export const postApi = async (url: string, data: dataLogin) => {

@@ -54,14 +54,14 @@ const Register: FC = () => {
           if (!JSON.parse(accList).some((acc: any) => acc.hoten === dataInput.hoten)) {
             delete dataInput.repeatPassword
             window.localStorage.setItem('listAccount', JSON.stringify([...JSON.parse(accList), dataInput]))
-            navigate('/login')
+            navigate('/')
           } else {
             alert('Tên đăng nhập đã tồn tại')
           }
         } else {
           delete dataInput.repeatPassword
           window.localStorage.setItem('listAccount', JSON.stringify([dataInput]))
-          navigate('/login')
+          navigate('/')
         }
       }
       setErrors(errClone)

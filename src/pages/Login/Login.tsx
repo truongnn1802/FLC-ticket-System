@@ -57,9 +57,8 @@ const Login: FC = () => {
   }
   return (
     <DefaultLayout>
-      <section className='container'>
+      <section className='container min-height'>
         <h2 className={styles.title}>Hệ thống Phiếu Yêu cầu - Support Ticket System</h2>
-
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.loginForm}>
           <Form action='' ref={formRef}>
@@ -102,7 +101,7 @@ const Login: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>{' '}
                 Đây là lần đầu anh/chị truy cập hệ thống? hoặc anh/chị quên mã số phiếu đã tạo, hãy{' '}
-                <Link className={styles.link} to='/new-request'>
+                <Link className={styles.link} to='/yeu-cau-moi'>
                   mở phiếu yêu cầu (ticket) mới
                 </Link>
                 .
@@ -112,7 +111,7 @@ const Login: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>{' '}
                 <b>Tôi là một Hỗ trợ viên</b> -
-                <Link className={styles.link} to='/login'>
+                <Link className={styles.link} to='/'>
                   Hãy đăng nhập tại đây!
                 </Link>
               </li>

@@ -105,3 +105,6 @@ a:hover {
   color: #23527c;
   text-decoration: underline;
 }
+.min-height {
+  min-height: calc(100vh - 205px);
+}
