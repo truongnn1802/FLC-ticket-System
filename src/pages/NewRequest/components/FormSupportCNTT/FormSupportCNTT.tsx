@@ -32,9 +32,7 @@ const FormSupportCNTT: FC = () => {
 
   return (
     <section className='container min-height'>
-      <h3>CHI TIẾT YÊU CẦU DỊCH VỤ CNTT</h3>
-      <span>Những trường có dấu hoa thị đỏ là bắt buộc phải điền.</span>
-      <hr style={{ marginBottom: '20px' }} />
+      <hr style={{ margin: '20px 0' }} />
       <div className={styles.infomation}>
         <Form action='' ref={formRef}>
           <Input label='1.Yêu cầu cần hỗ trợ' type='text' require name='vanDe' error={errors?.vanDe} />
