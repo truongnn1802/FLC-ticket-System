@@ -32,14 +32,14 @@ const FormSupportCNTT: FC = () => {
 
   return (
     <section className='container' style={{ minHeight: 'calc(100vh - 245px)' }}>
-      <h3>CHI TIẾT VỀ VẤN ĐỀ CNTT</h3>
+      <h3>CHI TIẾT YÊU CẦU DỊCH VỤ CNTT</h3>
       <span>Những trường có dấu hoa thị đỏ là bắt buộc phải điền.</span>
       <hr style={{ marginBottom: '20px' }} />
       <div className={styles.infomation}>
         <Form action='' ref={formRef}>
-          <Input label='1.Vấn đề cần hỗ trợ' type='text' require name='vanDe' error={errors?.vanDe} />
+          <Input label='1.Yêu cầu cần hỗ trợ' type='text' require name='vanDe' error={errors?.vanDe} />
           <div className='mb-15' />
-          <Input label='2. Mô tả vấn đề' type='text' require name='moTa' error={errors?.moTa} />
+          <Input label='2. Nội dung yêu cầu' type='text' require name='moTa' error={errors?.moTa} />
           <div className='mb-15' />
           <Select widthLabel='195px' label='Múi giờ' require setSlected='Viet Nam' width='400px' name='timeZone' />
           <Input label='* Khu vực | Tầng ' type='text' require widthLabel='150px' width='406px' name='sdt' />

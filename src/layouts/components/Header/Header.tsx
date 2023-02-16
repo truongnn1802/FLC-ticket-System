@@ -14,11 +14,11 @@ export const Header: FC = () => {
             <Link to='/' className={styles.navItem}>
               Trang chủ
             </Link>
-            {user.isLogin && (
+            {/* {user.isLogin && (
               <Link to='/document' className={styles.navItem}>
                 Tài liệu nội bộ
               </Link>
-            )}
+            )} */}
             <Link to='/new-request' className={styles.navItem}>
               Tạo yêu cầu mới
             </Link>

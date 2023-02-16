@@ -76,10 +76,10 @@ const Note = () => {
           </a>
         </div>
         <Row className={styles.form}>
-          <Col xl={8}>
+          <Col xl={8} lg={24} md={24} sm={24} xs={24}>
             <Search placeholder='input search text' onSearch={onSearch} style={{ width: '75%' }} />
           </Col>
-          <Col xl={8}>
+          <Col xl={8} lg={24} md={24} sm={24} xs={24}>
             <Select
               labelInValue
               defaultValue={{ value: '', label: '' }}
@@ -101,7 +101,7 @@ const Note = () => {
               ]}
             />
           </Col>
-          <Col xl={8}>
+          <Col xl={8} lg={24} md={24} sm={24} xs={24}>
             <div className={styles.presentation}>
               <span>Đã đóng</span>
               <span>
@@ -111,8 +111,8 @@ const Note = () => {
           </Col>
         </Row>
         <Row>
-          <Col xl={24}>
-            <Table columns={columns} dataSource={data} bordered />
+          <Col xl={24} lg={24} md={24}>
+            <Table columns={columns} dataSource={data} bordered scroll={{ x: true }} />
           </Col>
         </Row>
       </section>

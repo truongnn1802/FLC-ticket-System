@@ -49,7 +49,17 @@ const Select = ({
           handleChangeValue(e.target.value)
         }}
       >
-        {data?.map((item, index) => {
+        <option value='1'>One</option>
+        <option value='2'>Two</option>
+        <option value='3'>Three</option>
+      </select>
+    </div>
+  )
+}
+
+export default Select
+{
+  /* {data?.map((item, index) => {
           if (item.isSelectd) {
             return (
               <option value={item?.value} key={index} selected>
@@ -63,10 +73,5 @@ const Select = ({
               </option>
             )
           }
-        })}
-      </select>
-    </div>
-  )
+        })} */
 }
-
-export default Select
