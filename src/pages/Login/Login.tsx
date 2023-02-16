@@ -1,7 +1,7 @@
 import { faCheck, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
-import { FC, useContext, useEffect, useRef } from 'react'
+import { FC, useContext, useEffect, useRef,useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
@@ -11,6 +11,7 @@ import { GlobalContext } from 'src/useContext/GlobalContext'
 import styles from './index.module.scss'
 
 const Login: FC = () => {
+  const [isLoading,setLoading] = useState<boolean>(false)
   const formRef = useRef<HTMLFormElement>(null)
   const { handleAddUser } = useContext(GlobalContext)
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ const Login: FC = () => {
     console.log(res)
   }, [])
 
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const dataInput: any = {}
     let listInput: NodeListOf<HTMLInputElement>
@@ -71,7 +72,7 @@ const Login: FC = () => {
               name='password'
             />
             <div style={{ textAlign: 'center', marginTop: '25px' }}>
-              <Button bgColor='#337ab7' borderColor='#2e6da4' width='100%' isLoading>
+              <Button bgColor='#337ab7' borderColor='#2e6da4' width='100%' isLoading={isLoading} disabled={isLoading}>
                 Đăng nhập
               </Button>
               <div className={styles.createAccount}>

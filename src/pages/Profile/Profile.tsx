@@ -48,7 +48,7 @@ const Profile: FC = () => {
     }
   }, [reset])
 
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const dataInput: any = {}
     let errClone = { ...errors }
@@ -142,7 +142,13 @@ const Profile: FC = () => {
                 {user?.hoten ? 'Đăng ký' : 'Cập nhật'}
               </Button>
               {user?.hoten && (
-                <Button margin='0 5px' width='150px' bgColor='#f0ad4e' borderColor='#eea236' onClick={() => setReset(true)}>
+                <Button
+                  margin='0 5px'
+                  width='150px'
+                  bgColor='#f0ad4e'
+                  borderColor='#eea236'
+                  onClick={() => setReset(true)}
+                >
                   Làm mới
                 </Button>
               )}

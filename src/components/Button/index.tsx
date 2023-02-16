@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: string
   // handleClick?: (data?: any) => void
   isLoading?: boolean
-  margin?:string
+  margin?: string
 }
 
 const Button = ({
@@ -15,12 +15,14 @@ const Button = ({
   children,
   bgColor,
   borderColor,
-  width='100%',
+  width = '100%',
   className = '',
   style,
   margin,
   ...rest
 }: ButtonProps): JSX.Element => {
+  console.log(isLoading)
+
   const styles = {
     backgroundColor: bgColor,
     borderColor: borderColor,
@@ -30,12 +32,12 @@ const Button = ({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: '4px',
-    margin:margin,
+    margin: margin,
     ...style
   }
-  const newClass = className + 'cursor-not-allowed'
+  const newClass = className + ` ${isLoading ? 'cursor-not-allowed' : ''}`
   return (
-    <button className={newClass} {...rest} style={styles}>
+    <button className={newClass} {...rest} style={styles} >
       {isLoading && (
         <svg
           aria-hidden='true'
