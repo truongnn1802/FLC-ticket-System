@@ -1,4 +1,4 @@
-export type dataLogin = {
+export type DataLogin = {
   login: string
   password: string
   db: string

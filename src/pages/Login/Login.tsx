@@ -49,7 +49,7 @@ const Login: FC = () => {
       )
     if (account) {
       handleAddUser(account)
-      navigate('/')
+      navigate('/trang-chu')
       return
     } else {
       alert('Tài khoản không đúng')
