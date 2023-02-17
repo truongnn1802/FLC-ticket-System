@@ -82,15 +82,15 @@ export const Header: FC = () => {
             Tạo yêu cầu mới
           </Link>
         </li>
-          {user.isLogin && (
-        <li className={styles.item}>
+        {user.isLogin && (
+          <li className={styles.item}>
             <Link to='/ticket' className={styles.navItem}>
               Phiếu
             </Link>
-        </li>
-          )}
+          </li>
+        )}
         {user.isLogin && (
-          <li>
+          <li className={styles.item}>
             <Link to='/thong-tin-ca-nhan' className={styles.navItem}>
               Thông tin cá nhân
             </Link>

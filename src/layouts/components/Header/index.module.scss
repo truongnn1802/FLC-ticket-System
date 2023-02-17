@@ -57,10 +57,10 @@
   }
 }
 .listItem{
+  visibility: hidden;
+  height: 0;
 @media only screen and (max-width: 769px) {
   background-color: #0473aa;
-  opacity: 0;
-  visibility: hidden;
   height: 0;
   z-index: -1;
   transition: height 1s linear;
