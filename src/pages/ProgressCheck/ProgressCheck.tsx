@@ -10,7 +10,7 @@ import styles from './index.module.scss'
 const ProgressCheck: FC = () => {
   return (
     <DefaultLayout>
-      <section className='container'>
+      <section className='container min-height'>
         <h2 className={styles.title}>Kiểm tra tiến độ</h2>
         <p style={{ margin: '0 0 10px' }}>
           Hãy cung cấp địa chỉ email và mã số của phiếu để xem trạng thái xử lý. Có thể anh/chị sẽ phải đăng nhập để xem

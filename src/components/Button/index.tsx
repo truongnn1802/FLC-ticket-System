@@ -33,6 +33,7 @@ const Button = ({
     alignItems: 'center',
     borderRadius: '4px',
     margin: margin,
+    color:"#fff",
     ...style
   }
   const newClass = className + ` ${isLoading ? 'cursor-not-allowed' : ''}`
