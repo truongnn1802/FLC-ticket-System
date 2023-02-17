@@ -24,7 +24,7 @@ const ProgressCheck: FC = () => {
             <div className='mb-15' />
             <InputIcon label={<FontAwesomeIcon icon={faTicketAlt} />} placeHolder='Ticket' type='text' />
             <div style={{ textAlign: 'center', marginTop: '25px' }}>
-              <Button text='Xem phiếu' bgColor='#337ab7' borderColor='#2e6da4' width='100%' />
+              <Button  bgColor='#337ab7' borderColor='#2e6da4' >Xem phiếu</Button>
             </div>
           </Form>
           <div className={styles.partRight}>

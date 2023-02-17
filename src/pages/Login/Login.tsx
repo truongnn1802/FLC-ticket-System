@@ -17,14 +17,28 @@ const Login: FC = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const res = axios.post('http://103.11.199.96:8069/api/auth/token', {
+    // const res = axios.post('http://103.11.199.96:8069/api/auth/token', {
+    //   headers: {
+    //     login: 'admin',
+    //     password: 1,
+    //     db: 'HRM'
+    //   }
+    // })
+    const response =  fetch('http://103.11.199.96:8069/api/auth/token', {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
-        login: 'admin',
-        password: 1,
-        db: 'HRM'
-      }
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        'login': 'admin',
+        'password': '1',
+        'db': 'HRM'
+      },
+      body:JSON.stringify({})
+    });
+    response.then(res=>{
+      console.log(res.json());
+      
     })
-    console.log(res)
   }, [])
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
