@@ -1,6 +1,5 @@
-import DefaultLayout from 'src/layouts/BaseLayout'
-import styles from './index.module.scss'
 import Images from 'src/assets/images/404.jpg'
+import styles from './index.module.scss'
 
 const NotFoundPage = () => {
   return (

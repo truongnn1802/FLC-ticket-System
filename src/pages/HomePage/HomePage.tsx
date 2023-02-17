@@ -38,7 +38,7 @@ const HomePage: FC = () => {
       txtButton: 'PHẢN HỒI NHANH CHÓNG',
       icon: Icon2,
       arrColor: ['#0473aa', '#337ab7', '#2e6da4'],
-      href: user?.hoten ? '/kiem-tra-tien-do' : '/'
+      href: user?.hoten ? '/kiem-tra-tien-do' : '/dang-nhap'
     },
     {
       title: 'DỊCH VỤ 24/7',
@@ -64,7 +64,7 @@ const HomePage: FC = () => {
       txtButton: 'VIỆC KHÔNG TRÔI, NẮM BẮT KỊP THỜI',
       icon: Icon4,
       arrColor: ['#4caf50', '#5cb85c', '#4cae4c'],
-      href: user?.hoten ? '/phieu' : '/'
+      href: user?.hoten ? '/phieu' : '/dang-nhap'
     }
   ]
 

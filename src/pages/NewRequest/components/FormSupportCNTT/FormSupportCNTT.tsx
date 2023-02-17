@@ -1,7 +1,6 @@
 import { FC, useRef, useState } from 'react'
 import Form from 'src/components/Form'
 import Input from 'src/components/Input'
-import Select from 'src/components/Select'
 import styles from './index.module.scss'
 
 type typeErr = {

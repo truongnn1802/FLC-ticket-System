@@ -1,6 +1,6 @@
-import { FC,useContext,useEffect } from 'react'
 import { faCheck, faEnvelope, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FC, useContext } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
@@ -9,10 +9,9 @@ import { GlobalContext } from 'src/useContext/GlobalContext'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 const ProgressCheck: FC = () => {
-  const {user} = useContext(GlobalContext)
+  const { user } = useContext(GlobalContext)
   if (!user.hoten) {
-    return <Navigate to="/login
-    " replace />;
+    return <Navigate to='/dang-nhap' replace />
   }
   return (
     <DefaultLayout>
@@ -30,7 +29,9 @@ const ProgressCheck: FC = () => {
             <div className='mb-15' />
             <InputIcon label={<FontAwesomeIcon icon={faTicketAlt} />} placeHolder='Ticket' type='text' />
             <div style={{ textAlign: 'center', marginTop: '25px' }}>
-              <Button  bgColor='#337ab7' borderColor='#2e6da4' >Xem phiếu</Button>
+              <Button bgColor='#337ab7' borderColor='#2e6da4'>
+                Xem phiếu
+              </Button>
             </div>
           </Form>
           <div className={styles.partRight}>
@@ -39,7 +40,7 @@ const ProgressCheck: FC = () => {
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                Anh/chị đã có tài khoản chưa? <Link to='/'>Đăng nhập</Link> hoặc
+                Anh/chị đã có tài khoản chưa? <Link to='/dang-nhap'>Đăng nhập</Link> hoặc
                 <Link to='/dang-ky'> đăng ký để tạo tài khoản </Link> để truy cập tất cả các phiếu yêu cầu.
               </li>
 

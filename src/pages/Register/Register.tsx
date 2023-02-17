@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
 import Input from 'src/components/Input'
-import Select from 'src/components/Select'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 
@@ -54,14 +53,14 @@ const Register: FC = () => {
           if (!JSON.parse(accList).some((acc: any) => acc.hoten === dataInput.hoten)) {
             delete dataInput.repeatPassword
             window.localStorage.setItem('listAccount', JSON.stringify([...JSON.parse(accList), dataInput]))
-            navigate('/')
+            navigate('/dang-nhap')
           } else {
             alert('Tên đăng nhập đã tồn tại')
           }
         } else {
           delete dataInput.repeatPassword
           window.localStorage.setItem('listAccount', JSON.stringify([dataInput]))
-          navigate('/')
+          navigate('/dang-nhap')
         }
       }
       setErrors(errClone)
@@ -99,10 +98,6 @@ const Register: FC = () => {
               styleInput={{ margin: 0, fontWeight: 400 }}
               name='phoneExt'
             />
-            {/* <h3 style={{ padding: '0 15px' }}>Tùy chỉnh cá nhân</h3>
-            <hr style={{ margin: '10px 0 20px' }} />
-            <Select widthLabel='195px' label='Múi giờ' require setSlected='Viet Nam' width='500px' name='timeZone' />
-            <div className='mb-15' /> */}
             <h3 style={{ padding: '0 15px' }}>Mật khẩu xác thực vào hệ thống</h3>
             <hr style={{ margin: '25px 0 20px' }} />
             <Input label='Tạo mật khẩu mới' error={errors?.password} type='password' require name='password' />
@@ -115,8 +110,12 @@ const Register: FC = () => {
               name='repeatPassword'
             />
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
-              <Button width='150px' margin='0 5px' bgColor='#5cb85c' borderColor='#4cae4c'>Đăng ký</Button>
-              <Button width='150px' margin='0 5px' bgColor='#ac2925' borderColor='#d43f3a'>Hủy bỏ</Button>
+              <Button width='150px' margin='0 5px' bgColor='#5cb85c' borderColor='#4cae4c'>
+                Đăng ký
+              </Button>
+              <Button width='150px' margin='0 5px' bgColor='#ac2925' borderColor='#d43f3a'>
+                Hủy bỏ
+              </Button>
             </div>
             <br />
             <br />

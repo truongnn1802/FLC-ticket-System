@@ -1,10 +1,24 @@
 import { FC, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo from 'src/assets/images/logo.png'
 import { GlobalContext } from 'src/useContext/GlobalContext'
 import styles from './index.module.scss'
+import { Modal } from 'antd'
+
 export const Header: FC = () => {
-  const { user } = useContext(GlobalContext)
+  const { user, handleLogout } = useContext(GlobalContext)
+  const navigate = useNavigate()
+  const onLogout = () => {
+    Modal.warning({
+      title: 'Bạn muốn đăng xuất?',
+      closable: true,
+      className: 'styleModal',
+      onOk: () => {
+        handleLogout()
+        navigate('/dang-nhap')
+      }
+    })
+  }
   return (
     <div className={styles.header}>
       <nav className={styles.navMenu}>
@@ -38,12 +52,12 @@ export const Header: FC = () => {
               </Link>
             )}
             {!user.isLogin && (
-              <Link to='/' className={styles.navItem}>
+              <Link to='/dang-nhap' className={styles.navItem}>
                 Đăng nhập
               </Link>
             )}
             {user.isLogin && (
-              <Link to='/dang-xuat' className={styles.navItem}>
+              <Link to='' className={styles.navItem} onClick={onLogout}>
                 Đăng xuất
               </Link>
             )}
@@ -51,7 +65,7 @@ export const Header: FC = () => {
         </div>
       </nav>
       <div className={styles.banner}>
-        <Link to='/'>
+        <Link to='/trang-chu'>
           <img src={Logo} alt='Trung tâm hỗ trợ' />
         </Link>
       </div>

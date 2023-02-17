@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
 import { PropsBox } from 'src/types/utils.type'
 import styles from './index.module.scss'
-const BoxComponent = ({ title, content, icon, arrColor, href }: PropsBox) => {
+const BoxComponent = ({ title, content, icon, arrColor }: PropsBox) => {
   return (
     <div className={styles.box} style={{ borderColor: arrColor[0] }}>
       <section className={styles.body}>

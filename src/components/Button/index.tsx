@@ -1,5 +1,4 @@
-import { ButtonHTMLAttributes, Children } from 'react'
-import styles from './index.module.scss'
+import { ButtonHTMLAttributes } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   bgColor: string
@@ -21,7 +20,6 @@ const Button = ({
   margin,
   ...rest
 }: ButtonProps): JSX.Element => {
-
   const styles = {
     backgroundColor: bgColor,
     borderColor: borderColor,
@@ -32,12 +30,12 @@ const Button = ({
     alignItems: 'center',
     borderRadius: '4px',
     margin: margin,
-    color:"#fff",
+    color: '#fff',
     ...style
   }
   const newClass = className + ` ${isLoading ? 'cursor-not-allowed' : ''}`
   return (
-    <button className={newClass} {...rest} style={styles} >
+    <button className={newClass} {...rest} style={styles}>
       {isLoading && (
         <svg
           aria-hidden='true'
