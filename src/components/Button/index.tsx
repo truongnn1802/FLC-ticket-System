@@ -21,7 +21,6 @@ const Button = ({
   margin,
   ...rest
 }: ButtonProps): JSX.Element => {
-  console.log(isLoading)
 
   const styles = {
     backgroundColor: bgColor,

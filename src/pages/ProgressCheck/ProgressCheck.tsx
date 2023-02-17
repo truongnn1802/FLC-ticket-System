@@ -1,13 +1,19 @@
+import { FC,useContext,useEffect } from 'react'
 import { faCheck, faEnvelope, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
 import InputIcon from 'src/components/InputIcon'
+import { GlobalContext } from 'src/useContext/GlobalContext'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 const ProgressCheck: FC = () => {
+  const {user} = useContext(GlobalContext)
+  if (!user.hoten) {
+    return <Navigate to="/login
+    " replace />;
+  }
   return (
     <DefaultLayout>
       <section className='container min-height'>
