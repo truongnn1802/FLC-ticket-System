@@ -1,10 +1,9 @@
-import { FC, useContext, useEffect, useRef, useState } from 'react'
+import { MenuOutlined } from '@ant-design/icons'
+import { FC, useContext, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from 'src/assets/images/logo.png'
 import { GlobalContext } from 'src/useContext/GlobalContext'
 import styles from './index.module.scss'
-import cx from 'classnames'
-import { MenuOutlined } from '@ant-design/icons'
 export const Header: FC = () => {
   const { user } = useContext(GlobalContext)
 
@@ -73,37 +72,37 @@ export const Header: FC = () => {
       <ul ref={itemListRef} className={styles.listItem}>
         <hr className={styles.line}></hr>
         <li className={styles.item}>
-          <Link to='/trang-chu' className={styles.navItem}>
+          <Link style={{ display: 'block' }} to='/trang-chu' className={styles.navItem}>
             Trang chủ
           </Link>
         </li>
         <li className={styles.item}>
-          <Link to='/yeu-cau-moi' className={styles.navItem}>
+          <Link style={{ display: 'block' }} to='/yeu-cau-moi' className={styles.navItem}>
             Tạo yêu cầu mới
           </Link>
         </li>
         {user.isLogin && (
           <li className={styles.item}>
-            <Link to='/ticket' className={styles.navItem}>
+            <Link style={{ display: 'block' }} to='/phieu' className={styles.navItem}>
               Phiếu
             </Link>
           </li>
         )}
         {user.isLogin && (
           <li className={styles.item}>
-            <Link to='/thong-tin-ca-nhan' className={styles.navItem}>
+            <Link style={{ display: 'block' }} to='/thong-tin-ca-nhan' className={styles.navItem}>
               Thông tin cá nhân
             </Link>
           </li>
         )}
         <li className={styles.item}>
           {!user.isLogin ? (
-            <Link to='/' className={styles.navItem}>
+            <Link style={{ display: 'block' }} to='/' className={styles.navItem}>
               Đăng nhập
             </Link>
           ) : (
             user.isLogin && (
-              <Link to='/dang-xuat' className={styles.navItem}>
+              <Link style={{ display: 'block' }} to='/dang-xuat' className={styles.navItem}>
                 Đăng xuất
               </Link>
             )
