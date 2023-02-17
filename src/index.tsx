@@ -7,13 +7,11 @@ import './index.scss'
 import { GlobalProvider } from './useContext/GlobalContext'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <Router>
-      <GlobalStyles>
-        <GlobalProvider>
-          <App />
-        </GlobalProvider>
-      </GlobalStyles>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <GlobalStyles>
+      <GlobalProvider>
+        <App />
+      </GlobalProvider>
+    </GlobalStyles>
+  </Router>
 )

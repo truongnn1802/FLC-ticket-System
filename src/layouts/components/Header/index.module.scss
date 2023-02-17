@@ -29,6 +29,18 @@
     }
     .partRight {
     }
+    .selectMenu{
+      display: none;
+    @media only screen and (max-width: 769px) {
+    display: block;
+     display: flex;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    }
+  }
     .navItem {
       padding: 10px 15px;
       font-size: 14px;
@@ -43,6 +55,29 @@
       }
     }
   }
+}
+.listItem{
+@media only screen and (max-width: 769px) {
+  background-color: #0473aa;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  z-index: -1;
+  transition: height 1s linear;
+  .line{
+    border-top: 2px solid #333;
+     padding: 10px 0 5px 0;
+  }
+   .item{
+    margin: 0 16px 0 16px;
+    cursor: pointer;
+    transition: #337ab7 0.2s linear;
+    padding: 5px 0;
+   }
+   .item:hover{
+    background-color: #337ab7;
+   }
+}
 }
 .banner {
   width: var(--width);

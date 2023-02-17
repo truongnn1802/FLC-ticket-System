@@ -1,10 +1,29 @@
-import { FC, useContext } from 'react'
+import { FC, useContext, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from 'src/assets/images/logo.png'
 import { GlobalContext } from 'src/useContext/GlobalContext'
 import styles from './index.module.scss'
+import cx from 'classnames'
+import { MenuOutlined } from '@ant-design/icons'
 export const Header: FC = () => {
   const { user } = useContext(GlobalContext)
+
+  const selectBtnRef = useRef<HTMLDivElement>(null)
+  const itemListRef = useRef<HTMLUListElement>(null)
+  useEffect(() => {
+    selectBtnRef?.current?.addEventListener('click', () => {
+      const arrClass = selectBtnRef?.current?.classList
+      console.log(selectBtnRef?.current, 'click')
+      if (arrClass?.value.split(' ').some((e) => e === 'open')) {
+        selectBtnRef?.current?.classList?.remove('open')
+        itemListRef?.current?.classList?.remove('show')
+      } else {
+        selectBtnRef?.current?.classList?.add('open')
+        itemListRef?.current?.classList?.add('show')
+      }
+    })
+  }, [])
+
   return (
     <div className={styles.header}>
       <nav className={styles.navMenu}>
@@ -14,11 +33,6 @@ export const Header: FC = () => {
             <Link to='/trang-chu' className={styles.navItem}>
               Trang chủ
             </Link>
-            {/* {user.isLogin && (
-              <Link to='/document' className={styles.navItem}>
-                Tài liệu nội bộ
-              </Link>
-            )} */}
             <Link to='/yeu-cau-moi' className={styles.navItem}>
               Tạo yêu cầu mới
             </Link>
@@ -48,8 +62,55 @@ export const Header: FC = () => {
               </Link>
             )}
           </div>
+          <div ref={selectBtnRef} className={styles.selectMenu}>
+            <span>
+              <MenuOutlined />
+            </span>
+          </div>
         </div>
       </nav>
+
+      <ul ref={itemListRef} className={styles.listItem}>
+        <hr className={styles.line}></hr>
+        <li className={styles.item}>
+          <Link to='/trang-chu' className={styles.navItem}>
+            Trang chủ
+          </Link>
+        </li>
+        <li className={styles.item}>
+          <Link to='/yeu-cau-moi' className={styles.navItem}>
+            Tạo yêu cầu mới
+          </Link>
+        </li>
+          {user.isLogin && (
+        <li className={styles.item}>
+            <Link to='/ticket' className={styles.navItem}>
+              Phiếu
+            </Link>
+        </li>
+          )}
+        {user.isLogin && (
+          <li>
+            <Link to='/thong-tin-ca-nhan' className={styles.navItem}>
+              Thông tin cá nhân
+            </Link>
+          </li>
+        )}
+        <li className={styles.item}>
+          {!user.isLogin ? (
+            <Link to='/' className={styles.navItem}>
+              Đăng nhập
+            </Link>
+          ) : (
+            user.isLogin && (
+              <Link to='/dang-xuat' className={styles.navItem}>
+                Đăng xuất
+              </Link>
+            )
+          )}
+        </li>
+      </ul>
+
       <div className={styles.banner}>
         <Link to='/'>
           <img src={Logo} alt='Trung tâm hỗ trợ' />

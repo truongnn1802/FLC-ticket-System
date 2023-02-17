@@ -1,5 +1,3 @@
-import classnames from 'classnames'
-import { Link } from 'react-router-dom'
 import { PropsBox } from 'src/types/utils.type'
 import styles from './index.module.scss'
 const BoxComponent = ({ title, content, icon, arrColor, href }: PropsBox) => {
