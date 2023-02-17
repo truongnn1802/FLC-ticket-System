@@ -1,16 +1,22 @@
+import { FC,useContext,useEffect } from 'react'
 import { faCheck, faEnvelope, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
 import InputIcon from 'src/components/InputIcon'
+import { GlobalContext } from 'src/useContext/GlobalContext'
 import DefaultLayout from '../../layouts/BaseLayout/DefaultLayout'
 import styles from './index.module.scss'
 const ProgressCheck: FC = () => {
+  const {user} = useContext(GlobalContext)
+  if (!user.hoten) {
+    return <Navigate to="/login
+    " replace />;
+  }
   return (
     <DefaultLayout>
-      <section className='container'>
+      <section className='container min-height'>
         <h2 className={styles.title}>Kiểm tra tiến độ</h2>
         <p style={{ margin: '0 0 10px' }}>
           Hãy cung cấp địa chỉ email và mã số của phiếu để xem trạng thái xử lý. Có thể anh/chị sẽ phải đăng nhập để xem
@@ -24,7 +30,7 @@ const ProgressCheck: FC = () => {
             <div className='mb-15' />
             <InputIcon label={<FontAwesomeIcon icon={faTicketAlt} />} placeHolder='Ticket' type='text' />
             <div style={{ textAlign: 'center', marginTop: '25px' }}>
-              <Button text='Xem phiếu' bgColor='#337ab7' borderColor='#2e6da4' width='100%' />
+              <Button  bgColor='#337ab7' borderColor='#2e6da4' >Xem phiếu</Button>
             </div>
           </Form>
           <div className={styles.partRight}>
@@ -42,7 +48,7 @@ const ProgressCheck: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
                 Đây là lần đầu anh/chị truy cập hệ thống? hoặc anh/chị quên mã số phiếu đã tạo, hãy{' '}
-                <Link to='/ticket'>mở phiếu yêu cầu (ticket) mới</Link>.
+                <Link to='/phieu'>mở phiếu yêu cầu (ticket) mới</Link>.
               </li>
             </ul>
           </div>

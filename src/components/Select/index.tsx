@@ -10,7 +10,7 @@ type Props = {
   setSlected?: string
   name?: string
   onChange?: (value?: string) => void
-  data?: { value: string; isSelectd: string; name: string }[]
+  data?: any[]
 }
 
 const Select = ({
@@ -49,6 +49,21 @@ const Select = ({
           handleChangeValue(e.target.value)
         }}
       >
+        {data?.map((item, index) => {
+          if (item?.isSelectd) {
+            return (
+              <option value={item?.value} key={index} selected>
+                {item?.name}
+              </option>
+            )
+          } else {
+            return (
+              <option value={item?.value} key={index}>
+                {item?.name}
+              </option>
+            )
+          }
+        })}
         <option value='0'>Chọn 1 dịch vụ CNTT</option>
         <option value='1'>Dịch vụ hỗ trợ phần cứng </option>
         <option value='2'>Dịch vụ hỗ trợ phần mềm</option>

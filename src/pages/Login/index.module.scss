@@ -20,7 +20,6 @@ a.link {
     }
   }
   .partRight {
-
     width: calc(50% - 15px);
     vertical-align: top;
     min-height: 20px;
@@ -45,12 +44,11 @@ a.link {
       color: #3c763d;
     }
   }
-  .createAccount{
-
+  .createAccount {
     display: flex;
     justify-content: center;
     padding: 0 10px;
-    span{
+    span {
       font-size: 12px;
       padding: 0 10px;
     }

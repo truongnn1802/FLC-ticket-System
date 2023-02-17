@@ -76,7 +76,7 @@ const Register: FC = () => {
         <h3>Thông tin liên lạc</h3>
         <hr style={{ marginBottom: '20px' }} />
         <div className={styles.infomation}>
-          <Form action='' ref={formRef}>
+          <Form action='' ref={formRef} onSubmit={handleSubmit}>
             <Input label='Địa chỉ email' type='email' require name='email' error={errors?.email} />
             <div className='mb-15' />
             <Input label='Họ tên' type='text' require name='hoten' error={errors?.hoten} />
@@ -115,8 +115,8 @@ const Register: FC = () => {
               name='repeatPassword'
             />
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
-              <Button text='Đăng ký' bgColor='#5cb85c' borderColor='#4cae4c' handleClick={handleSubmit} />
-              <Button text='Hủy bỏ' bgColor='#ac2925' borderColor='#d43f3a' />
+              <Button width='150px' margin='0 5px' bgColor='#5cb85c' borderColor='#4cae4c'>Đăng ký</Button>
+              <Button width='150px' margin='0 5px' bgColor='#ac2925' borderColor='#d43f3a'>Hủy bỏ</Button>
             </div>
             <br />
             <br />
