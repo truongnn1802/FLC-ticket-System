@@ -1,7 +1,7 @@
-import { faCheck, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import axios from 'axios'
-import { FC, useContext, useEffect, useRef,useState } from 'react'
+import { Modal } from 'antd'
+import { FC, useContext, useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import Form from 'src/components/Form'
@@ -11,7 +11,7 @@ import { GlobalContext } from 'src/useContext/GlobalContext'
 import styles from './index.module.scss'
 
 const Login: FC = () => {
-  const [isLoading,setLoading] = useState<boolean>(false)
+  const [isLoading] = useState<boolean>(false)
   const formRef = useRef<HTMLFormElement>(null)
   const { handleAddUser } = useContext(GlobalContext)
   const navigate = useNavigate()
@@ -24,20 +24,19 @@ const Login: FC = () => {
     //     db: 'HRM'
     //   }
     // })
-    const response =  fetch('http://103.11.199.96:8069/api/auth/token', {
+    const response = fetch('http://103.11.199.96:8069/api/auth/token', {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
         'Content-Type': 'application/json',
         // 'Content-Type': 'application/x-www-form-urlencoded',
-        'login': 'admin',
-        'password': '1',
-        'db': 'HRM'
+        login: 'admin',
+        password: '1',
+        db: 'HRM'
       },
-      body:JSON.stringify({})
-    });
-    response.then(res=>{
-      console.log(res.json());
-      
+      body: JSON.stringify({})
+    })
+    response.then((res) => {
+      console.log(res.json())
     })
   }, [])
 
@@ -63,7 +62,11 @@ const Login: FC = () => {
       navigate('/trang-chu')
       return
     } else {
-      alert('Tài khoản không đúng')
+      Modal.error({
+        title: 'This is an error message',
+        content: 'some messages...some messages...',
+        className: 'styleModal'
+      })
     }
   }
   return (
@@ -125,7 +128,7 @@ const Login: FC = () => {
                   <FontAwesomeIcon icon={faCheck} />
                 </span>{' '}
                 <b>Tôi là một Hỗ trợ viên</b> -
-                <Link className={styles.link} to='/'>
+                <Link className={styles.link} to='/dang-nhap'>
                   Hãy đăng nhập tại đây!
                 </Link>
               </li>

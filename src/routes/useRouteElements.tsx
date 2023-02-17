@@ -1,22 +1,29 @@
-import { useRoutes } from 'react-router-dom'
+import { Navigate, useRoutes } from 'react-router-dom'
+import InternalDocument from 'src/pages/InternalDocument/InternalDocument'
+import Logout from 'src/pages/Logout'
+import Note from 'src/pages/Note'
+import NotFoundPage from 'src/pages/NotFoundPage'
+import Profile from 'src/pages/Profile'
+import Register from 'src/pages/Register'
+import HomePage from '../pages/HomePage'
 import Login from '../pages/Login'
 import NewRequest from '../pages/NewRequest'
 import ProgressCheck from '../pages/ProgressCheck'
-import HomePage from '../pages/HomePage'
-import Register from 'src/pages/Register'
-import InternalDocument from 'src/pages/InternalDocument/InternalDocument'
-import Logout from 'src/pages/Logout'
-import Profile from 'src/pages/Profile'
-import Note from 'src/pages/Note'
-import NotFoundPage from 'src/pages/NotFoundPage'
 export default function useRouteElements() {
+  const user = window.localStorage.getItem('account')
+  const account = JSON.parse(JSON.parse(JSON.stringify(user)))
+
   const routes = useRoutes([
+    {
+      path: '/',
+      element: <Navigate to={account.hoten ? '/trang-chu' : '/dang-nhap'} replace />
+    },
     {
       path: '/trang-chu',
       element: <HomePage />
     },
     {
-      path: '/',
+      path: '/dang-nhap',
       element: <Login />
     },
     {

@@ -14,6 +14,7 @@
   --secondry-color: ##5cb85c;
   --primary-text-color: #fff;
   --width: 1170px;
+  --border-radius: 4px;
   display: block;
   @media screen and (max-width: 639px) {
     --width: 100%;
@@ -112,4 +113,12 @@ a:hover {
   opacity: 1;
   visibility: visible;
   height: 185px;
+}
+.styleModal {
+  top: 0;
+  button {
+    background-color: var(--primary-color);
+    border: transparent;
+    border-radius: var(--border-radius);
+  }
 }

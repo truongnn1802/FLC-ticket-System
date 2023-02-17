@@ -3,6 +3,7 @@ import { Badge, Select, Table } from 'antd'
 import { Col, Row } from 'antd/es/grid'
 import Search from 'antd/es/input/Search'
 import type { ColumnsType } from 'antd/es/table'
+import { Link } from 'react-router-dom'
 import DefaultLayout from 'src/layouts/BaseLayout'
 import styles from './index.module.scss'
 
@@ -71,9 +72,9 @@ const Note = () => {
       <section className='container min-height'>
         <div className={styles.titleHeader}>
           <h2>Phiếu</h2>
-          <a className={styles.icSyn} href='/'>
+          <Link className={styles.icSyn} to='/dang-nhap'>
             <SyncOutlined />
-          </a>
+          </Link>
         </div>
         <Row className={styles.form}>
           <Col xl={8} lg={24} md={24} sm={24} xs={24}>
