@@ -63,9 +63,9 @@
   background-color: #0473aa;
   height: 0;
   z-index: -1;
-  transition: height 1s linear;
+  transition: all 1s linear;
   .line{
-    border-top: 2px solid #333;
+    border-top: 1px solid #333;
      padding: 10px 0 5px 0;
   }
    .item{
