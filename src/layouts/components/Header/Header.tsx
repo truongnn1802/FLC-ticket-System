@@ -13,7 +13,7 @@ export const Header: FC = () => {
   useEffect(() => {
     selectBtnRef?.current?.addEventListener('click', () => {
       const arrClass = selectBtnRef?.current?.classList
-      console.log(selectBtnRef?.current, 'click')
+      console.log(window.innerWidth, 'click')
       if (arrClass?.value.split(' ').some((e) => e === 'open')) {
         selectBtnRef?.current?.classList?.remove('open')
         itemListRef?.current?.classList?.remove('show')
@@ -83,7 +83,7 @@ export const Header: FC = () => {
         </div>
       </nav>
 
-      <ul ref={itemListRef} className={styles.listItem}>
+      <ul ref={itemListRef} className={styles.listItem} style={{height:window.innerWidth > 768 ? '180px':'120px'}}>
         <hr className={styles.line}></hr>
         <li className={styles.item}>
           <Link style={{ display: 'block' }} to='/trang-chu' className={styles.navItem}>
