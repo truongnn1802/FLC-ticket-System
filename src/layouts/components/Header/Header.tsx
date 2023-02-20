@@ -1,31 +1,33 @@
 import { MenuOutlined } from '@ant-design/icons'
 import { FC, useContext, useEffect, useRef } from 'react'
-import { Link,useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo from 'src/assets/images/logo.png'
 import { GlobalContext } from 'src/useContext/GlobalContext'
 import styles from './index.module.scss'
 import { Modal } from 'antd'
 
 export const Header: FC = () => {
-
   const selectBtnRef = useRef<HTMLDivElement>(null)
   const itemListRef = useRef<HTMLUListElement>(null)
+
+  const { user, handleLogout } = useContext(GlobalContext)
+  const navigate = useNavigate()
+
   useEffect(() => {
     selectBtnRef?.current?.addEventListener('click', () => {
       const arrClass = selectBtnRef?.current?.classList
-      console.log(window.innerWidth, 'click')
       if (arrClass?.value.split(' ').some((e) => e === 'open')) {
         selectBtnRef?.current?.classList?.remove('open')
+        document.querySelector('.show')?.setAttribute('style', `height:${'0'}`)
         itemListRef?.current?.classList?.remove('show')
       } else {
         selectBtnRef?.current?.classList?.add('open')
         itemListRef?.current?.classList?.add('show')
+        document.querySelector('.show')?.setAttribute('style', `height:${user?.hoten ? '185px' : '120px'}`)
       }
     })
   }, [])
 
-  const { user, handleLogout } = useContext(GlobalContext)
-  const navigate = useNavigate()
   const onLogout = () => {
     Modal.warning({
       title: 'Bạn muốn đăng xuất?',
@@ -83,7 +85,7 @@ export const Header: FC = () => {
         </div>
       </nav>
 
-      <ul ref={itemListRef} className={styles.listItem} style={{height:window.innerWidth > 768 ? '180px':'120px'}}>
+      <ul ref={itemListRef} className={styles.listItem}>
         <hr className={styles.line}></hr>
         <li className={styles.item}>
           <Link style={{ display: 'block' }} to='/trang-chu' className={styles.navItem}>

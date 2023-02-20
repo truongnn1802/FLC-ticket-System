@@ -22,14 +22,19 @@ export const GlobalContext = React.createContext<{
 })
 
 export const GlobalProvider = ({ children }: Props) => {
-  const [user, setUser] = React.useState<UserLogin>({
-    email: '',
-    hoten: '',
-    sdt: '',
-    phoneExt: '',
-    timeZone: '',
-    password: '',
-    isLogin: false
+  const [user, setUser] = React.useState<UserLogin>(() => {
+    const acc = window.localStorage.getItem('account')
+    if (acc) {
+      return JSON.parse(acc)
+    } return {
+      email: '',
+      hoten: '',
+      sdt: '',
+      phoneExt: '',
+      timeZone: '',
+      password: '',
+      isLogin: false
+    }
   })
 
   useEffect(() => {
@@ -43,7 +48,7 @@ export const GlobalProvider = ({ children }: Props) => {
           phoneExt: '',
           timeZone: '',
           password: 'admin',
-          isLogin: false
+          isLogin: true
         }
       ])
     )

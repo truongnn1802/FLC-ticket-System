@@ -55,13 +55,14 @@
   }
 }
 .listItem{
+ display: none;
+@media only screen and (max-width: 769px) {
+  display: block;
   visibility: hidden;
   height: 0;
-@media only screen and (max-width: 769px) {
   background-color: #0473aa;
-  height: 0;
   z-index: -1;
-  transition: all 1s linear;
+  transition: all .5s linear;
   .line{
     border-top: 1px solid #333;
      padding: 10px 0 5px 0;
